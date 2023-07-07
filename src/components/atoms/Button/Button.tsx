@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import { ReactNode } from 'react';
 import styles from './button.module.scss';
 
 export interface ButtonProps {
