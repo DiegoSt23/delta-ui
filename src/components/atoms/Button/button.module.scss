@@ -1,0 +1,39 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+.button {
+  background-color: transparent;
+  border: solid 1px $gray1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  color: $primary;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: auto;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 15px $primary;
+    border: solid 1px $primaryLight;
+    background-color: $primary;
+    color: $black;
+    transition: all ease 0.3s;
+  }
+
+  &:active {
+    box-shadow: 0px 0px 5px $primary;
+    border: solid 1px $primary;
+    transition: all ease 0.2s;
+  }
+}
