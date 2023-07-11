@@ -5,7 +5,7 @@ import { ImSearch } from 'react-icons/im';
 import { AiFillApple } from 'react-icons/ai';
 
 export default {
-  title: 'SierraUI/Button',
+  title: 'DeltaUI/Button',
   component: Button,
   argTypes: {},
 } as Meta<typeof Button>;
@@ -22,6 +22,7 @@ const Template: StoryFn<ButtonProps> = (args) => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#000000',
+        padding: 60,
       }}
     >
       <Button {...args}>{children}</Button>
@@ -29,12 +30,24 @@ const Template: StoryFn<ButtonProps> = (args) => {
   )
 };
 
-export const Text = Template.bind({});
+export const Default = Template.bind({});
 export const TextAndIcon = Template.bind({});
 export const Icon = Template.bind({});
+export const FullWidth = Template.bind({});
+export const Text = Template.bind({});
+
+Default.args = {
+  children: 'Click',
+};
 
 Text.args = {
   children: 'Click',
+  variant: 'text',
+};
+
+FullWidth.args = {
+  children: 'Click',
+  fullWidth: true,
 };
 
 TextAndIcon.args = {

@@ -1,0 +1,53 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin text {
+  font-size: small;
+  font-family: $red-hat;
+  color: $gray;
+  margin-left: 13px;
+}
+
+.mainContainer {
+
+  .label {
+    @include text;
+    margin-bottom: 5px;
+  }
+
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2px 3px;
+    background-color: transparent;
+    border: solid 1px $gray-border;
+    border-radius: 12px;
+    transition: all ease 0.3s;
+
+    
+
+    .input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: $white;
+      font-size: medium;
+      font-family: $red-hat;
+      font-weight: 500;
+
+      &:disabled {
+        filter: saturate(0.5);
+        opacity: 0.6;
+        cursor: auto;
+      }
+    }
+  }
+
+  .helperText {
+    @include text;
+    color: $error;
+    margin-top: 5px;
+  }
+}

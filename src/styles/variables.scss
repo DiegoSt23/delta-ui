@@ -6,8 +6,17 @@ $small-desktop: 1150px;
 $normal-desktop: 1600px;
 
 //Colors
-$white: #fff;
+$white: #fafafa;
+$white-2: #d9d9d9;
 $black: #000000;
 $primary: #31dab5;
-$primaryLight: #bafaec;
-$gray1: #80808044
+$primary-light: #89ffe5;
+$gray-border: #80808044;
+$gray: #888888;
+$error: #ff1b63;
+
+//Fonts
+$red-hat: 'Red Hat Display', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$roboto-mono: 'Roboto Mono', monospace;
+$josefin: 'Josefin Sans', sans-serif;
