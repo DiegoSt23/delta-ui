@@ -12,7 +12,7 @@ const Template: StoryFn<InputProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '95vh',
+      height: '100vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -29,6 +29,7 @@ export const Password = Template.bind({});
 export const WithButton = Template.bind({});
 export const Error = Template.bind({});
 export const FullWidth = Template.bind({});
+export const Disabled = Template.bind({});
 
 Text.args = {
   value: '',
@@ -62,4 +63,10 @@ FullWidth.args = {
   fullWidth: true,
   value: '',
   onChange: (text) => console.log(text),
+};
+
+Disabled.args = {
+  value: '',
+  onChange: (text) => console.log(text),
+  disabled: true,
 };

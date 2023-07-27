@@ -4,7 +4,8 @@ import styles from './button.module.scss';
 export interface ButtonProps {
   children: string | ReactNode;
   onClick: () => void;
-  variant?: 'default' | 'text';
+  variant?: 'hollow' | 'filled' | 'text';
+  small?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: ReactNode;
@@ -13,7 +14,8 @@ export interface ButtonProps {
 }
 
 const defaultProps: Partial<ButtonProps> = {
-  variant: 'default',
+  variant: 'hollow',
+  small: false,
   disabled: false,
   fullWidth: false,
   icon: undefined,
@@ -23,6 +25,7 @@ const defaultProps: Partial<ButtonProps> = {
 
 export const Button = ({
   variant,
+  small,
   children,
   onClick,
   disabled,
@@ -32,7 +35,12 @@ export const Button = ({
   className,
 }: ButtonProps) => (
   <button
-    style={{ width: fullWidth ? '100%' : 'fit-content' }}
+    style={{
+      width: fullWidth ? '100%' : 'fit-content',
+      padding: variant !== 'text'
+        ? small ? '5px 10px' : '10px 15px'
+        : '0px',
+    }}
     className={[styles[variant || 'default'], className].join(' ')}
     onClick={onClick}
     disabled={disabled}

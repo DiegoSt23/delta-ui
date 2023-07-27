@@ -1,0 +1,144 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin main-container {
+  position: relative;
+  overflow: visible;
+}
+
+@mixin tooltip {
+  width: max-content;
+  max-width: 250px;
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px $gray-2;
+  background: -webkit-linear-gradient(-45deg,#1e1e1e,#0a0a0a);
+  backdrop-filter: blur(10px);
+  transition: all ease 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 99; 
+}
+
+@mixin beak {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.mainContainer {
+  @include main-container;
+
+  .top {
+    @include tooltip;
+    left: 50%;
+    bottom: 80%;
+    transform: translateX(-50%);
+
+    &::after {
+      @include beak;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-bottom: none;
+      border-top-color: $gray-2;
+    }
+  }
+
+  &:hover .top {
+    opacity: 1;
+    pointer-events: all;
+    bottom: calc(100% + 10px);
+    transition: all ease 0.2s;
+  }
+}
+
+.mainContainer {
+  @include main-container;
+
+  .bottom {
+    @include tooltip;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+
+    &::after {
+      @include beak;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top: none;
+      border-bottom-color: $gray-2;
+    }
+  }
+
+  &:hover .bottom {
+    opacity: 1;
+    pointer-events: all;
+    top: calc(100% + 10px);
+    transition: all ease 0.2s;
+  }
+}
+
+.mainContainer {
+  @include main-container;
+
+  .left {
+    @include tooltip;
+    top: 50%;
+    right: 80%;
+    transform: translateY(-50%);
+
+    &::after {
+      @include beak;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 7px solid transparent;
+      border-right: none;
+      border-left-color: $gray-2;
+    }
+  }
+
+  &:hover .left {
+    opacity: 1;
+    pointer-events: all;
+    right: calc(100% + 10px);
+    transition: all ease 0.2s;
+  }
+}
+
+.mainContainer {
+  @include main-container;
+
+  .right {
+    @include tooltip;
+    top: 50%;
+    left: 80%;
+    transform: translateY(-50%);
+
+    &::after {
+      @include beak;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 7px solid transparent;
+      border-left: none;
+      border-right-color: $gray-2;
+    }
+  }
+
+  &:hover .right {
+    opacity: 1;
+    pointer-events: all;
+    left: calc(100% + 10px);
+    transition: all ease 0.2s;
+  }
+}

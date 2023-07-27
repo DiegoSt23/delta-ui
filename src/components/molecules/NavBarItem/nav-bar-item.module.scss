@@ -1,0 +1,47 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin button-style {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+.button {
+  @include button-style;
+  color: $white-2;
+
+  &:hover {
+    transition: all ease 0.2s;
+    color: #fff;
+    background-color: $gray-3;
+  }
+
+  &:active {
+    opacity: 0.5;
+    transition: all ease 0.2s;
+  }
+}
+
+.buttonActive {
+  @include button-style;
+  color: $primary;
+
+  &:hover {
+    transition: all ease 0.2s;
+    color: $primary-light;
+    background-color: $gray-3;
+  }
+
+  &:active {
+    opacity: 0.5;
+    transition: all ease 0.2s;
+  }
+}

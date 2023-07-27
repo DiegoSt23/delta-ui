@@ -1,0 +1,65 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin modal-container {
+  position: relative;
+  transition: all ease 0.3s;
+  border-radius: 20px;
+  transition: all ease 0.3s;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000ca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  z-index: 99;
+    
+  .sm {
+    width: 30%;
+    @include modal-container;
+    
+    @media screen and (max-width: $phone) {
+      width: 95%;
+    }
+  }
+
+  .md {
+    width: 50%;
+    @include modal-container;
+    
+    @media screen and (max-width: $phone) {
+      width: 95%;
+    }
+  }
+
+  .lg {
+    width: 70%;
+    @include modal-container;
+    
+    @media screen and (max-width: $phone) {
+      width: 95%;
+    }
+  }
+
+  .xl {
+    width: 95%;
+    @include modal-container;
+    
+    @media screen and (max-width: $phone) {
+      width: 95%;
+    }
+  }
+
+  .auto {
+    width: auto;
+    @include modal-container;
+  }
+}

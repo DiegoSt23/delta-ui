@@ -1,10 +1,9 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
-.default {
+.hollow {
   background-color: transparent;
   border: solid 1px $gray-border;
-  padding: 10px 15px;
   border-radius: 10px;
   transition: all ease 0.3s;
   cursor: pointer;
@@ -23,14 +22,15 @@
     cursor: auto;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     box-shadow: 0px 0px 15px $primary;
+    border: solid 1px $primary;
     background-color: $primary;
     color: $black;
     transition: all ease 0.3s;
   }
 
-  &:active {
+  &:not(:disabled):active {
     opacity: 0.8;
     box-shadow: 0px 0px 5px $primary;
     border: solid 1px $primary;
@@ -38,10 +38,44 @@
   }
 }
 
+.filled {
+  background-color: $white-2;
+  border: solid 1px $white-2;
+  border-radius: 10px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  color: $black;
+  font-family: $red-hat;
+  font-size: 1em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: auto;
+  }
+
+  &:not(:disabled):hover {
+    box-shadow: 0px 0px 15px $white;
+    background-color: $white;
+    color: $black;
+    transition: all ease 0.3s;
+  }
+
+  &:not(:disabled):active {
+    opacity: 0.8;
+    box-shadow: 0px 0px 5px $white;
+    transition: all ease 0.2s;
+  }
+}
+
 .text {
   background-color: transparent;
   border: none;
-  padding: 0px;
   transition: all ease 0.3s;
   cursor: pointer;
   color: $primary;
@@ -59,13 +93,13 @@
     cursor: auto;
   }
 
-  &:hover {
-    text-shadow: 0px 0px 20px $primary-light;
+  &:not(:disabled):hover {
+    text-shadow: 0px 0px 15px $primary-light;
     transition: all ease 0.3s;
   }
 
-  &:active {
-    opacity: 0.7;
+  &:not(:disabled):active {
+    opacity: 0.4;
     transition: all ease 0.2s;
   }
 }

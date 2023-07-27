@@ -97,12 +97,16 @@ export const Input = ({
           }}
         />
         {buttonContent && type !== 'password' && (
-          <Button disabled={disabled} onClick={buttonOnClick}>
+          <Button disabled={disabled} onClick={buttonOnClick} variant='filled'>
             {buttonContent}
           </Button>
         )}
         {type === 'password' && (
-          <Button disabled={disabled} onClick={handleShowPassword}>
+          <Button
+            disabled={disabled}
+            onClick={handleShowPassword}
+            variant='filled'
+          >
             {showPassword ? <RiEye2Line /> : <PiEyeClosedBold />}
           </Button>
         )}

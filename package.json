@@ -2,7 +2,10 @@
   "name": "delta-ui",
   "private": true,
   "version": "0.0.0",
+  "description": "delta-ui",
   "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -41,5 +44,6 @@
     "storybook": "^7.0.26",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
-  }
+  },
+  "types": "dist/esm/types/index.d.ts"
 }

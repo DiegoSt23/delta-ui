@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin full-width {
+  width: 100%;
+}
+
+.mainContainer {
+  border: solid 1px $gray-border;
+  background: -webkit-linear-gradient(-45deg,#3b3b3b64,#1111115d);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+
+  .header {
+    @include full-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    z-index: 999;
+  }
+
+  .footer {
+    @include full-width;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    z-index: 998;
+  }
+}

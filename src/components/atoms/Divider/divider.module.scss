@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+.horizontal {
+  width: 100%;
+  border-top: solid 1px $gray-border;
+}
+
+.vertical {
+  border-left: solid 1px $gray-border;
+  align-self: center;
+}

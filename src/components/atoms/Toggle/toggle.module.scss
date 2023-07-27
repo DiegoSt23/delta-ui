@@ -1,0 +1,69 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin button-style {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: auto;
+  }
+}
+
+@mixin toggle-style {
+  position: absolute;
+  border-radius: 100%;
+  transition: all ease 0.3s;
+}
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .sm {
+    @include button-style;
+    width: 44px;
+    height: 23px;
+
+    .toggle {
+      @include toggle-style;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .md {
+    @include button-style;
+    width: 54px;
+    height: 29px;
+
+    .toggle {
+      @include toggle-style;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .lg {
+    @include button-style;
+    width: 64px;
+    height: 34px;
+
+    .toggle {
+      @include toggle-style;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

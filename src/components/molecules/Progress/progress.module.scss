@@ -1,0 +1,44 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin progress-container {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $gray-border;
+}
+
+@mixin progress-bar {
+  border-radius: 5px;
+  background-color: $white-2;
+  transition: all ease 0.3s;
+}
+
+.light {
+  @include progress-container;
+  height: 5px;
+
+  .progressBar {
+    @include progress-bar;
+    height: 5px;
+  }
+}
+
+.normal {
+  @include progress-container;
+  height: 8px;
+
+  .progressBar {
+    @include progress-bar;
+    height: 8px;
+  }
+}
+
+.bold {
+  @include progress-container;
+  height: 12px;
+
+  .progressBar {
+    @include progress-bar;
+    height: 12px;
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin chip-general-styles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+@mixin text-general-styles {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.primary {
+  @include chip-general-styles;
+  background-color: $primary-light-2;
+  color: $primary;
+
+  .text {
+    @include text-general-styles;
+    color: $primary;
+  }
+}
+
+.green {
+  @include chip-general-styles;
+  background-color: $green-light;
+  color: $green;
+
+  .text {
+    @include text-general-styles;
+    color: $green;
+  }
+}
+
+.blue {
+  @include chip-general-styles;
+  background-color: $blue-light;
+  color: $blue;
+
+  .text {
+    @include text-general-styles;
+    color: $blue;
+  }
+}
+
+.pink {
+  @include chip-general-styles;
+  background-color: $pink-light;
+  color: $pink;
+
+  .text {
+    @include text-general-styles;
+    color: $pink;
+  }
+}
+
+.yellow {
+  @include chip-general-styles;
+  background-color: $yellow-light;
+  color: $yellow;
+
+  .text {
+    @include text-general-styles;
+    color: $yellow;
+  }
+}
+
+.purple {
+  @include chip-general-styles;
+  background-color: $purple-light;
+  color: $purple;
+
+  .text {
+    @include text-general-styles;
+    color: $purple;
+  }
+}
+
