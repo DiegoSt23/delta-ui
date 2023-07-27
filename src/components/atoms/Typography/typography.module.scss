@@ -1,0 +1,54 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin heading-styles {
+  font-family: $red-hat;
+  font-weight: 700;
+  background: -webkit-linear-gradient(180deg,#fff,#adadad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin paragraph-styles {
+  color: $gray;
+  font-family: $roboto;
+
+  &::selection {
+    color: $black;
+    background-color: $primary-light;
+  }
+}
+
+.heading1 {
+  @include heading-styles;
+  font-size: 4em;
+}
+
+.heading2 {
+  @include heading-styles;
+  font-size: 3em;
+}
+
+.heading3 {
+  @include heading-styles;
+  font-size: xx-large;
+}
+
+.subtitle {
+  @include paragraph-styles;
+  color: $white-2;
+  font-size: large;
+}
+
+.paragraph {
+  @include paragraph-styles;
+  font-size: medium;
+}
+
+.paragraph2 {
+  @include paragraph-styles;
+  font-size: small;
+}
