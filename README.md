@@ -17,5 +17,22 @@ Whether you're working on a personal project or a professional application, Delt
 npm i diego-react-delta-ui
 ```
 
+### Usage
+At your index.ts:
+```js
+import 'diego-react-delta-ui/dist/style.css';
+```
+
+And that's it, now just import and use the components:
+```js
+import { Button } 'diego-react-delta-ui';
+
+const App = () => (
+  <div>
+    <Button {...props}>Click me</Button>
+  </div>
+);
+```
+
 ### Storybook
 Find more information [here](https://64c82a77442a234e83128ff8-ufewrdsuhk.chromatic.com/?path=/docs/deltaui-avatar--docs).
