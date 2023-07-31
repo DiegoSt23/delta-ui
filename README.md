@@ -2,7 +2,7 @@
 
 Delta-UI is a lightweight and minimalistic React components library designed to provide a seamless user experience. With a focus on simplicity and performance, Delta-UI offers a curated set of reusable and customizable components that can easily be integrated into any React project. The library embraces the principles of dark mode design, ensuring a visually appealing and comfortable interface in low-light conditions.
 
--Dark Mode Ready: Delta-UI is optimized for dark mode, providing a stunning visual experience for users in dimly lit environments while retaining its elegance in light mode.
+-Dark Mode Ready: Delta-UI is optimized for dark mode, providing a stunning visual experience for users in dimly lit environments.
 
 -Lightweight and Performant: With a minimal footprint, Delta-UI prioritizes performance, ensuring quick loading times and smooth interactions for enhanced user satisfaction.
 
@@ -18,4 +18,4 @@ npm i diego-react-delta-ui
 ```
 
 ### Storybook
-Find the documentation [here]([https://paperhive.org/](https://64c82a77442a234e83128ff8-ufewrdsuhk.chromatic.com/?path=/docs/deltaui-avatar--docs)https://64c82a77442a234e83128ff8-ufewrdsuhk.chromatic.com/?path=/docs/deltaui-avatar--docs).
+Find more information [here](https://64c82a77442a234e83128ff8-ufewrdsuhk.chromatic.com/?path=/docs/deltaui-avatar--docs).
