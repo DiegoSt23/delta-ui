@@ -4,7 +4,7 @@ import {
   useRef,
   useEffect,
 } from 'react';
-import { BiDotsVerticalRounded } from 'react-icons/bi';
+import { Menu as DefaultIcon } from '../../../assets/icons';
 import { MenuItem, MenuItemProps } from '../../atoms';
 import styles from './menu.module.scss';
 
@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <div ref={menuRef} className={styles.mainContainer}>
       <button className={styles.menuIconContainer} onClick={handleOpenMenu}>
-        {menuIcon || <BiDotsVerticalRounded color='gray' size={25} />}
+        {menuIcon || <DefaultIcon color='gray' width={25} height={25} />}
       </button>
       {isOpen && (
         <div

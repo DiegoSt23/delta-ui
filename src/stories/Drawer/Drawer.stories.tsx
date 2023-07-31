@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
-import { AiOutlineFire } from 'react-icons/ai';
 import {
   Button,
   Drawer,

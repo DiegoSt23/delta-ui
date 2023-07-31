@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useState, useEffect } from 'react';
-import { PiEyeClosedBold } from 'react-icons/pi';
-import { RiEye2Line } from 'react-icons/ri';
+import { EyeClosed, Eye } from '../../../assets/icons';
 import { Button } from '../Button';
 import styles from './input.module.scss';
 
@@ -107,7 +106,11 @@ export const Input = ({
             onClick={handleShowPassword}
             variant='filled'
           >
-            {showPassword ? <RiEye2Line /> : <PiEyeClosedBold />}
+            {showPassword ? (
+              <Eye width={15} height={15} />
+            ) : (
+              <EyeClosed width={15} height={15} />
+            )}
           </Button>
         )}
       </div>

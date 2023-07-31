@@ -1,5 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react';
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { Menu as OptionsIcon } from '../../../assets/icons';
 import { Typography, Checkbox } from '../../atoms';
 import { Menu } from '../Menu';
 import styles from './table-row.module.scss';
@@ -96,13 +96,7 @@ export const TableRow = ({
                 title: option.item,
                 onClick: option.action,
               }))}
-              menuIcon={
-                <MdOutlineKeyboardArrowDown
-                  width={15}
-                  height={15}
-                  color='#d9d9d9'
-                />
-              }
+              menuIcon={<OptionsIcon width={15} height={15} color='#d9d9d9' />}
             />
           )}
         </div>

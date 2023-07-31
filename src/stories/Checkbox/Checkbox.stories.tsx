@@ -62,6 +62,7 @@ CustomCheckedColor.args = {
 };
 
 Disabled.args = {
+  isDefaultChecked: true,
   onChange: (val) => console.log(val),
   disabled: true,
 };
