@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, ReactNode } from 'react';
-import { BsCheckLg } from 'react-icons/bs';
+import { Check } from '../../../assets/icons';
 import { Typography } from '../Typography';
 import styles from './checkbox.module.scss';
 
@@ -66,7 +67,7 @@ export const Checkbox = ({
         }}
         disabled={disabled}
       >
-        {isChecked && (checkedIcon || <BsCheckLg />)}
+        {isChecked && (checkedIcon || <Check />)}
       </button>
       {label && (
         <Typography type='paragraph' className={labelClassName}>

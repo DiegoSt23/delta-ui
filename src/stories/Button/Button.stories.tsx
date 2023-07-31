@@ -30,7 +30,8 @@ const Template: StoryFn<ButtonProps> = (args) => {
 };
 
 export const Default = Template.bind({});
-export const TextAndIcon = Template.bind({});
+export const IconPrefix = Template.bind({});
+export const IconSuffix = Template.bind({});
 export const Icon = Template.bind({});
 export const FullWidth = Template.bind({});
 export const Text = Template.bind({});
@@ -62,9 +63,15 @@ FullWidth.args = {
   fullWidth: true,
 };
 
-TextAndIcon.args = {
+IconPrefix.args = {
   children: 'Login with Apple',
   icon: <AiFillApple size={20} />,
+};
+
+IconSuffix.args = {
+  children: 'Login with Apple',
+  icon: <AiFillApple size={20} />,
+  iconPosition: 'suffix',
 };
 
 Icon.args = {
