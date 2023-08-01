@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useState, useEffect } from 'react';
 import { Menu as OptionsIcon } from '../../../assets/icons';
 import { Typography, Checkbox } from '../../atoms';
