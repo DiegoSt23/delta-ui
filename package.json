@@ -5,12 +5,14 @@
   "type": "module",
   "main": "./dist/diego-react-delta-ui.umd.cjs",
   "module": "./dist/diego-react-delta-ui.js",
-  "author": "Diego Alvarez",
+  "author": {
+    "name": "Diego Alvarez"
+  },
   "license": "MIT",
-  "homepage": "https://github.com/DiegoSt23/delta-ui",
+  "homepage": "https://64c82a77442a234e83128ff8-ufewrdsuhk.chromatic.com/?path=/docs/deltaui-avatar--docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DiegoSt23/delta-ui"
+    "url": "git+https://github.com/DiegoSt23/delta-ui.git"
   },
   "keywords": [
     "react",
@@ -49,6 +51,7 @@
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react": "^4.0.0",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.20.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
@@ -62,5 +65,10 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/DiegoSt23/delta-ui/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "diego-react-delta-ui@0.0.1"
 }

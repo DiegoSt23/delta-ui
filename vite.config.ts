@@ -12,6 +12,9 @@ export default defineConfig({
       formats: ['es', 'cjs', 'umd'],
       fileName: 'diego-react-delta-ui',
     },
+    rollupOptions: {
+      external: ['react', 'react dom'],
+    },
   },
   plugins: [react(), dts()],
 });
