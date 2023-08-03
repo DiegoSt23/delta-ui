@@ -28,8 +28,8 @@ export const Text = Template.bind({});
 export const Password = Template.bind({});
 export const WithButton = Template.bind({});
 export const Error = Template.bind({});
-export const FullWidth = Template.bind({});
 export const Disabled = Template.bind({});
+export const FullWidth = Template.bind({});
 
 Text.args = {
   value: '',
@@ -47,13 +47,14 @@ Password.args = {
 Error.args = {
   value: '',
   onChange: (text) => console.log(text),
+  label: 'Label',
   helperText: 'Required',
   error: true,
 };
 
 WithButton.args = {
   value: '',
-  label: 'Term',
+  label: 'Label',
   placeholder: 'Start typing',
   onChange: (text) => console.log(text),
   buttonContent: <AiOutlineClose />,
@@ -63,10 +64,14 @@ FullWidth.args = {
   fullWidth: true,
   value: '',
   onChange: (text) => console.log(text),
+  label: 'Label',
+  helperText: 'Helper text',
 };
 
 Disabled.args = {
   value: '',
   onChange: (text) => console.log(text),
   disabled: true,
-};
+  label: 'Label',
+  helperText: 'Helper text',
+}
