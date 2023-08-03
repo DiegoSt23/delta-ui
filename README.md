@@ -35,4 +35,4 @@ const App = () => (
 ```
 
 ### Storybook
-Find more information [here](https://64c82a77442a234e83128ff8-bqcshsbsgc.chromatic.com/?path=/docs/deltaui-avatar--docs).
+Find more information [here](https://64c82a77442a234e83128ff8-bheesekwfv.chromatic.com/?path=/docs/deltaui-avatar--docs).
