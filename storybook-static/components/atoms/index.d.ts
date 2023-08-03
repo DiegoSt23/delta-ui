@@ -9,3 +9,5 @@ export * from './Checkbox';
 export * from './MenuItem';
 export * from './Avatar';
 export * from './Dropdown';
+export * from './Link';
+export * from './TextArea';
