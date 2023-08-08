@@ -9,7 +9,7 @@ export interface NavBarItemProps {
   isActive?: boolean;
   className?: string;
   activeClassName?: string;
-  render?: (name: string, icon: ReactNode, isActive: boolean) => ReactNode;
+  render?: ({ name, icon, isActive } : { name: string, icon: ReactNode, isActive?: boolean }) => ReactNode;
 }
 
 const defaultProps: Partial<NavBarItemProps> = {
@@ -31,7 +31,7 @@ export const NavBarItem = ({
 }: NavBarItemProps) => (
   <Tooltip tooltipContent={name} position='right'>
     {render ? (
-      render(name, icon, isActive || false)
+      render({ name, icon, isActive })
     ) : (
       <button
         className={`${
