@@ -5,16 +5,21 @@ import styles from './nav-bar-item.module.scss';
 export interface NavBarItemProps {
   name: string;
   icon: ReactNode;
+  isActive: boolean;
   onClick?: () => void;
-  isActive?: boolean;
   className?: string;
   activeClassName?: string;
-  render?: ({ name, icon, isActive } : { name: string, icon: ReactNode, isActive?: boolean }) => ReactNode;
+  render?: ({
+    icon,
+    isActive,
+  }: {
+    icon: ReactNode;
+    isActive: boolean;
+  }) => ReactNode;
 }
 
 const defaultProps: Partial<NavBarItemProps> = {
   onClick: undefined,
-  isActive: false,
   className: undefined,
   activeClassName: undefined,
   render: undefined,
@@ -31,7 +36,7 @@ export const NavBarItem = ({
 }: NavBarItemProps) => (
   <Tooltip tooltipContent={name} position='right'>
     {render ? (
-      render({ name, icon, isActive })
+      render({ icon, isActive })
     ) : (
       <button
         className={`${
