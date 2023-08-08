@@ -1,6 +1,6 @@
 export interface TypographyProps {
     children: string;
-    type?: 'heading1' | 'heading2' | 'heading3' | 'subtitle' | 'paragraph' | 'paragraph2';
+    type?: 'heading1' | 'heading2' | 'heading3' | 'heading4' | 'subtitle' | 'paragraph' | 'paragraph2' | 'paragraph3';
     className?: string;
     upperCase?: boolean;
 }
