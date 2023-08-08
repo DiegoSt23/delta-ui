@@ -10,6 +10,7 @@ export interface CardProps {
   fullWidth?: boolean;
   mainContainerClassName?: string;
   headerClassName?: string;
+  titleClassName?: string;
   footerClassName?: string;
 }
 
@@ -20,6 +21,7 @@ const defaultProps: Partial<CardProps> = {
   fullWidth: false,
   mainContainerClassName: undefined,
   headerClassName: undefined,
+  titleClassName: undefined,
   footerClassName: undefined,
 };
 
@@ -31,6 +33,7 @@ export const Card = ({
   fullWidth,
   mainContainerClassName,
   headerClassName,
+  titleClassName,
   footerClassName,
 }: CardProps) => {
   return (
@@ -40,14 +43,21 @@ export const Card = ({
     >
       {headerTitle && (
         <div className={[styles.header, headerClassName].join(' ')}>
-          <Typography type='heading3' className={styles.title}>
+          <Typography
+            type='heading3'
+            className={[styles.title, titleClassName].join(' ')}
+          >
             {headerTitle}
           </Typography>
           {headerElement || null}
         </div>
       )}
       {children}
-      {footer && <div className={[styles.footer, footerClassName].join(' ')}>{footer}</div>}
+      {footer && (
+        <div className={[styles.footer, footerClassName].join(' ')}>
+          {footer}
+        </div>
+      )}
     </div>
   );
 };

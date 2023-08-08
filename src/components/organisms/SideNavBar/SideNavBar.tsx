@@ -13,6 +13,7 @@ export interface SideNavBarProps {
 }
 const defaultProps: Partial<SideNavBarProps> = {
   mainIcon: undefined,
+  onClickMainIcon: undefined,
   itemsPosition: 'center',
   mainContainerClassName: undefined,
   itemClassName: undefined,
