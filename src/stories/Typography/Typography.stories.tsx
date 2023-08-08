@@ -25,10 +25,13 @@ const Template: StoryFn<TypographyProps> = (args) => (
       h1. Lorem Ipsum
     </Typography>
     <Typography {...args} type='heading2'>
-      h3. Lorem Ipsum
+      h2. Lorem Ipsum
     </Typography>
     <Typography {...args} type='heading3'>
       h3. Lorem Ipsum
+    </Typography>
+    <Typography {...args} type='heading4'>
+      h4. Lorem Ipsum
     </Typography>
     <Typography {...args} type='subtitle'>
       subtitle. Lorem Ipsum
@@ -37,6 +40,9 @@ const Template: StoryFn<TypographyProps> = (args) => (
       p. Lorem Ipsum
     </Typography>
     <Typography {...args} type='paragraph2'>
+      p. Lorem Ipsum
+    </Typography>
+    <Typography {...args} type='paragraph3'>
       p. Lorem Ipsum
     </Typography>
   </div>

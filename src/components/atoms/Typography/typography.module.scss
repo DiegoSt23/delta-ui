@@ -37,6 +37,11 @@
   font-size: xx-large;
 }
 
+.heading4 {
+  @include heading-styles;
+  font-size: x-large;
+}
+
 .subtitle {
   @include paragraph-styles;
   color: $white-2;
@@ -51,4 +56,9 @@
 .paragraph2 {
   @include paragraph-styles;
   font-size: small;
+}
+
+.paragraph3 {
+  @include paragraph-styles;
+  font-size: x-small;
 }
