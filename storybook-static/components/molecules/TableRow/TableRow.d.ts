@@ -8,6 +8,7 @@ export interface TableRowProps {
             action: () => void;
         }[];
         optionsMenuWidth?: number | string;
+        optionsMenuIcon?: ReactNode;
     }[];
     type?: 'body' | 'header';
     justifyContent?: 'flex-start' | 'center' | 'flex-end';

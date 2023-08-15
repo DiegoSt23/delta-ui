@@ -4,7 +4,7 @@ export interface MenuProps {
     items: MenuItemProps[];
     menuIcon?: ReactNode;
     width?: number | string;
-    position?: 'left' | 'center' | 'right';
+    position?: 'left' | 'right';
     optionsContainerClassName?: string;
     optionsClassName?: string;
 }

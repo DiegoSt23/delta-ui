@@ -5,7 +5,7 @@ import styles from './toast.module.scss';
 export interface ToastProps extends AlertProps {
   displayToast: boolean;
   resetDisplayToast: Dispatch<SetStateAction<boolean>>;
-  position?: 'top-right' | 'top-left' | ' center';
+  // position?: 'top-right' | 'top-left' | ' center';
   clearAfter?: number;
 }
 
@@ -17,14 +17,14 @@ const defaultProps: Partial<ToastProps> = {
   actionElement: undefined,
   mainContainerClassName: undefined,
   textClassName: undefined,
-  position: 'top-right',
+  // position: 'top-right',
   clearAfter: 5000,
 };
 
 export const Toast = ({
   displayToast,
   resetDisplayToast,
-  position,
+  // position,
   clearAfter,
   text,
   title,
