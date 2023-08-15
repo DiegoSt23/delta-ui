@@ -1,0 +1,63 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin general-styles {
+  .indicator {
+    border-radius: 100%;
+    padding: 5px;
+    background-color: red;
+  }
+
+  .indicatorCount {
+    border-radius: 10px;
+    min-width: 20px;
+    padding: 0px 5px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+
+    .count {
+      color: #fff;
+      font-family: $roboto;
+      font-size: 10px;
+    }
+  }
+}
+
+.badgeMainContainer {
+  position: relative;
+  
+  .topRight {
+    @include general-styles;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(50%),
+  }
+
+  .bottomRight {
+    @include general-styles;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateX(50%);
+  }
+
+  .topLeft {
+    @include general-styles;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .bottomLeft {
+    @include general-styles;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}

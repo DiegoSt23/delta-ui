@@ -14,12 +14,12 @@ export const Check: React.FC<SVGProps<SVGSVGElement>> = ({
     xmlns='http://www.w3.org/2000/svg'
     {...props}
   >
-    <g id='SVGRepo_bgCarrier' stroke-width='0' />
+    <g id='SVGRepo_bgCarrier' strokeWidth='0' />
 
     <g
       id='SVGRepo_tracerCarrier'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
 
     <g id='SVGRepo_iconCarrier'>
@@ -27,9 +27,9 @@ export const Check: React.FC<SVGProps<SVGSVGElement>> = ({
       <path
         d='M4 12.6111L8.92308 17.5L20 6.5'
         stroke={stroke}
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />{' '}
     </g>
   </svg>

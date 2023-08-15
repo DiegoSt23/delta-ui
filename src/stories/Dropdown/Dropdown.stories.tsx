@@ -24,29 +24,64 @@ const Template: StoryFn<DropdownProps> = (args) => (
 );
 
 export const Default = Template.bind({});
+export const Label = Template.bind({});
+export const HelperText = Template.bind({});
+export const Error = Template.bind({});
+export const Disabled = Template.bind({});
+
+const items = [
+  {
+    name: 'Option 1',
+    value: 1,
+  },
+  {
+    name: 'Option 2',
+    value: 2,
+  },
+  {
+    name: 'Option 3',
+    value: 3,
+  },
+  {
+    name: 'Option 4',
+    value: 4,
+  },
+  {
+    name: 'Option 5',
+    value: 5,
+  },
+];
 
 Default.args = {
-  items: [
-    {
-      name: 'Option 1',
-      value: 1,
-    },
-    {
-      name: 'Option 2',
-      value: 2,
-    },
-    {
-      name: 'Option 3',
-      value: 3,
-    },
-    {
-      name: 'Option 4',
-      value: 4,
-    },
-    {
-      name: 'Option 5',
-      value: 5,
-    },
-  ],
+  items,
+  onChange: (val) => console.log(val),
+};
+
+Label.args = {
+  items,
+  label: 'Label',
+  onChange: (val) => console.log(val),
+};
+
+HelperText.args = {
+  items,
+  label: 'Label',
+  helperText: 'Helper text',
+  onChange: (val) => console.log(val),
+};
+
+Error.args = {
+  items,
+  label: 'Label',
+  helperText: 'Helper text',
+  error: true,
+  onChange: (val) => console.log(val),
+};
+
+Disabled.args = {
+  items,
+  label: 'Label',
+  helperText: 'Helper text',
+  disabled: true,
   onChange: (val) => console.log(val),
 };

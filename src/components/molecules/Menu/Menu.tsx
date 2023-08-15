@@ -12,7 +12,7 @@ export interface MenuProps {
   items: MenuItemProps[];
   menuIcon?: ReactNode;
   width?: number | string;
-  position?: 'left' | 'center' | 'right';
+  position?: 'left' | 'right';
   optionsContainerClassName?: string;
   optionsClassName?: string;
 }
@@ -20,7 +20,7 @@ export interface MenuProps {
 const defaultProps: Partial<MenuProps> = {
   menuIcon: undefined,
   width: 200,
-  position: 'center',
+  position: 'right',
   optionsContainerClassName: undefined,
   optionsClassName: undefined,
 };
@@ -36,27 +36,46 @@ export const Menu = ({
   const menuRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [opacity, setOpacity] = useState<number>(0);
+  const [scale, setScale] = useState<number>(0);
+  const [optionsTranslateX, setOptionsTranslateX] = useState<number>(-30);
+  const [optionsOpacity, setOptionsOpacity] = useState<number>(0);
 
   const handleDisplayMenu = (val: boolean) => setIsOpen(val);
 
+  const handleResetValues = () => {
+    setOptionsTranslateX(-30);
+    setOptionsOpacity(0);
+
+    setTimeout(() => {
+      setOpacity(0);
+      setScale(0);
+    }, 300);
+
+    setTimeout(() => {
+      handleDisplayMenu(false);
+    }, 600);
+  };
+
   const handleOpenMenu = () => {
     if (isOpen) {
-      setOpacity(0);
-      setTimeout(() => {
-        handleDisplayMenu(false);
-      }, 300);
+      handleResetValues();
     } else {
       handleDisplayMenu(true);
       setTimeout(() => {
         setOpacity(1);
+        setScale(1);
       }, 100);
+      setTimeout(() => {
+        setOptionsTranslateX(0);
+        setOptionsOpacity(1);
+      }, 300);
     }
   };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        handleResetValues();
       }
     };
 
@@ -70,28 +89,37 @@ export const Menu = ({
   return (
     <div ref={menuRef} className={styles.mainContainer}>
       <button className={styles.menuIconContainer} onClick={handleOpenMenu}>
-        {menuIcon || <DefaultIcon color='gray' width={25} height={25} />}
+        {menuIcon || <DefaultIcon color='gray' width={20} height={20} />}
       </button>
       {isOpen && (
         <div
           className={[
-            styles[position || 'center'],
+            styles[position || 'right'],
             optionsContainerClassName,
           ].join(' ')}
           style={{
             width,
             opacity,
+            transform: `scale(${scale})`,
           }}
         >
           {items?.map((item) => (
-            <MenuItem
-              {...item}
-              onClick={() => {
-                item.onClick();
-                handleOpenMenu();
+            <div
+              className={styles.menuItem}
+              style={{
+                transform: `translateX(${optionsTranslateX}px)`,
+                opacity: optionsOpacity,
               }}
-              className={optionsClassName}
-            />
+            >
+              <MenuItem
+                {...item}
+                onClick={() => {
+                  item.onClick();
+                  handleOpenMenu();
+                }}
+                className={optionsClassName}
+              />
+            </div>
           ))}
         </div>
       )}

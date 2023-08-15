@@ -3,3 +3,8 @@ export * from './EyeClosed';
 export * from './Eye';
 export * from './Menu';
 export * from './ArrowDown';
+export * from './Delta';
+export * from './Error';
+export * from './Info';
+export * from './Success';
+export * from './Warning';

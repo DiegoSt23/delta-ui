@@ -9,12 +9,13 @@ export interface DropdownProps {
     label?: string;
     error?: boolean;
     helperText?: string;
+    disabled?: boolean;
     mainContainerClassName?: string;
     optionsContainerClassName?: string;
     optionClassName?: string;
 }
 export declare const Dropdown: {
-    ({ items, onChange, placeholder, label, error, helperText, mainContainerClassName, optionsContainerClassName, optionClassName, }: DropdownProps): import("react/jsx-runtime").JSX.Element;
+    ({ items, onChange, placeholder, label, error, helperText, disabled, mainContainerClassName, optionsContainerClassName, optionClassName, }: DropdownProps): import("react/jsx-runtime").JSX.Element;
     defaultProps: Partial<DropdownProps>;
 };
 export {};

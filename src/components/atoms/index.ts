@@ -11,3 +11,4 @@ export * from './Avatar';
 export * from './Dropdown';
 export * from './Link';
 export * from './TextArea';
+export * from './Badge';

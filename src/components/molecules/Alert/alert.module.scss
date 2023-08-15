@@ -1,0 +1,64 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+.alertMainContainer {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .subContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .success {
+        color: #c1faaa;
+      }
+
+      .info {
+        color: #949fd1;
+      }
+
+      .warning {
+        color: #e8d478;
+      }
+
+      .error {
+        color: #ff89ae;
+      }
+    }
+
+    .actionButton {
+      background-color: transparent;
+      border: none;
+      transition: all ease 0.2s;
+      cursor: pointer;
+      color: $white-2;
+      font-family: $roboto;
+      font-size: 0.8em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      padding-left: 10px;
+      text-transform: uppercase;
+
+      &:active {
+        opacity: 0.5;
+        transition: all ease 0.2s;
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ export interface TableRowProps {
       action: () => void;
     }[];
     optionsMenuWidth?: number | string;
+    optionsMenuIcon?: ReactNode;
   }[];
   type?: 'body' | 'header';
   justifyContent?: 'flex-start' | 'center' | 'flex-end';
@@ -88,17 +89,15 @@ export const TableRow = ({
             <Menu
               width={item?.optionsMenuWidth || 'fit-content'}
               position={
-                index === 0
-                  ? 'right'
-                  : index === items.length - 1
+                index === items.length - 1
                   ? 'left'
-                  : 'center'
+                  : 'right'
               }
               items={item.options.map((option) => ({
                 title: option.item,
                 onClick: option.action,
               }))}
-              menuIcon={<OptionsIcon width={15} height={15} color='#d9d9d9' />}
+              menuIcon={item?.optionsMenuIcon || <OptionsIcon width={15} height={15} color='#d9d9d9' />}
             />
           )}
         </div>

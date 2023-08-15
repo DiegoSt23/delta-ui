@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 import { Table, TableProps } from '../../components';
 
 export default {
@@ -24,6 +25,7 @@ const Template: StoryFn<TableProps> = (args) => (
 export const Default = Template.bind({});
 export const Underline = Template.bind({});
 export const LabelOptions = Template.bind({});
+export const LabelOptionsCustomIcon = Template.bind({});
 export const CheckboxSelection = Template.bind({});
 
 const labels = [
@@ -89,6 +91,68 @@ const labelsWithOptions = [
   },
   {
     content: 'Status',
+    options: [
+      {
+        item: 'Option1',
+        action: () => console.log('Option 1 triggered'),
+      },
+      {
+        item: 'Option2',
+        action: () => console.log('Option 2 triggered'),
+      },
+    ],
+  },
+];
+
+const labelsWithOptionsCustomIcon = [
+  {
+    content: 'First Name',
+    numberOfColumns: 3,
+    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    options: [
+      {
+        item: 'Option1',
+        action: () => console.log('Option 1 triggered'),
+      },
+      {
+        item: 'Option2',
+        action: () => console.log('Option 2 triggered'),
+      },
+    ],
+  },
+  {
+    content: 'Last Name',
+    numberOfColumns: 3,
+    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    options: [
+      {
+        item: 'Option1',
+        action: () => console.log('Option 1 triggered'),
+      },
+      {
+        item: 'Option2',
+        action: () => console.log('Option 2 triggered'),
+      },
+    ],
+  },
+  {
+    content: 'Email',
+    numberOfColumns: 3,
+    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    options: [
+      {
+        item: 'Option1',
+        action: () => console.log('Option 1 triggered'),
+      },
+      {
+        item: 'Option2',
+        action: () => console.log('Option 2 triggered'),
+      },
+    ],
+  },
+  {
+    content: 'Status',
+    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
     options: [
       {
         item: 'Option1',
@@ -169,6 +233,13 @@ Underline.args = {
 
 LabelOptions.args = {
   labels: labelsWithOptions,
+  items,
+  justifyContent: 'flex-start',
+  underline: true,
+};
+
+LabelOptionsCustomIcon.args = {
+  labels: labelsWithOptionsCustomIcon,
   items,
   justifyContent: 'flex-start',
   underline: true,

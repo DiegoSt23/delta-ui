@@ -1,0 +1,23 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+.toastMainContainer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+
+  .toastContainer {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: $black;
+    box-shadow: 0px 5px 5px 5px #00000029;
+    pointer-events: all;
+    transition: all ease 0.2s;
+  }
+}
