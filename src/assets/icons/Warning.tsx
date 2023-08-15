@@ -1,9 +1,10 @@
 import React, { SVGProps } from 'react';
 
-export const Eye: React.FC<SVGProps<SVGSVGElement>> = ({
+export const Warning: React.FC<SVGProps<SVGSVGElement>> = ({
   width = 64,
   height = 64,
   stroke = '#000000',
+  fill = '#000000',
   ...props
 }) => (
   <svg
@@ -25,19 +26,18 @@ export const Eye: React.FC<SVGProps<SVGSVGElement>> = ({
     <g id='SVGRepo_iconCarrier'>
       {' '}
       <path
-        d='M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z'
-        stroke='#000000'
-        strokeWidth='2'
+        d='M6.30928 9C8.59494 5 9.96832 3 12 3C14.3107 3 15.7699 5.58716 18.6883 10.7615L19.0519 11.4063C21.4771 15.7061 22.6897 17.856 21.5937 19.428C20.4978 21 17.7864 21 12.3637 21H11.6363C6.21356 21 3.50217 21 2.40626 19.428C1.45498 18.0635 2.24306 16.2635 4.05373 13'
+        stroke={stroke}
+        strokeWidth='1.5'
         strokeLinecap='round'
-        strokeLinejoin='round'
       />{' '}
       <path
-        d='M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z'
+        d='M12 8V13'
         stroke={stroke}
-        strokeWidth='2'
+        strokeWidth='1.5'
         strokeLinecap='round'
-        strokeLinejoin='round'
       />{' '}
+      <circle cx='12' cy='16' r='1' fill={fill} />{' '}
     </g>
   </svg>
 );

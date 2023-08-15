@@ -27,7 +27,6 @@ const Template: StoryFn<MenuProps> = (args) => (
   </div>
 );
 
-export const Center = Template.bind({});
 export const Left = Template.bind({});
 export const Right = Template.bind({});
 export const WithSections = Template.bind({});
@@ -110,26 +109,25 @@ const itemsDescriptions = [
   },
 ];
 
-Center.args = {
-  items,
-};
-
 Left.args = {
   items,
   position: 'left',
+  width: 125,
 };
 
 Right.args = {
   items,
-  position: 'right',
+  width: 125,
 };
 
 WithSections.args = {
   items: itemsSections,
+  width: 125,
 };
 
 WithIcons.args = {
   items: itemsIcons,
+  width: 150,
 };
 
 WithDescriptions.args = {
@@ -139,4 +137,5 @@ WithDescriptions.args = {
 CustomMenuIcon.args = {
   menuIcon: <RiMenu4Fill color='gray' size={25} />,
   items,
+  width: 125,
 };

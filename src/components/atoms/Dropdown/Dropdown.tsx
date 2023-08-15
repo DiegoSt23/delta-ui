@@ -15,6 +15,7 @@ export interface DropdownProps {
   label?: string;
   error?: boolean;
   helperText?: string;
+  disabled?: boolean;
   mainContainerClassName?: string;
   optionsContainerClassName?: string;
   optionClassName?: string;
@@ -25,6 +26,7 @@ const defaultProps: Partial<DropdownProps> = {
   label: '',
   error: false,
   helperText: '',
+  disabled: false,
   mainContainerClassName: undefined,
   optionsContainerClassName: undefined,
   optionClassName: undefined,
@@ -37,6 +39,7 @@ export const Dropdown = ({
   label,
   error,
   helperText,
+  disabled,
   mainContainerClassName,
   optionsContainerClassName,
   optionClassName,
@@ -84,6 +87,7 @@ export const Dropdown = ({
         className={[styles.button, mainContainerClassName].join(' ')}
         style={{ borderColor: error ? '#ff1b63' : '#80808044' }}
         onClick={handleDisplayDropdown}
+        disabled={disabled}
       >
         {selectedOptionText || placeholder}
         <ArrowDown
@@ -116,6 +120,7 @@ export const Dropdown = ({
             opacity,
             transform: `translateY(${translateY}px)`,
           }}
+          disabled={disabled}
         >
           {items?.map(({ name, value }) => (
             <option

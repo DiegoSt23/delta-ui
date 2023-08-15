@@ -5,6 +5,8 @@ import styles from './link.module.scss';
 export interface LinkProps {
   href: string;
   children: string | ReactNode;
+  target?: '_self' | '_blank'
+  download?: boolean;
   variant: 'subtitle' | 'paragraph' | 'paragraph2';
   textDecoration?: 'underline' | 'default';
   className?: string;
@@ -12,6 +14,8 @@ export interface LinkProps {
 }
 
 const defaultProps: Partial<LinkProps> = {
+  target: '_self',
+  download: false,
   variant: 'paragraph',
   textDecoration: 'default',
   className: undefined,
@@ -21,6 +25,8 @@ const defaultProps: Partial<LinkProps> = {
 export const Link = ({
   href,
   children,
+  target,
+  download,
   variant,
   textDecoration,
   className,
@@ -29,7 +35,8 @@ export const Link = ({
   <a
     href={href}
     className={[styles[textDecoration || 'default'], className].join(' ')}
-    target='blank'
+    target={target}
+    download={download}
   >
     {['string', 'number'].includes(typeof children) ? (
       <Typography

@@ -27,20 +27,36 @@ const Template: StoryFn<LinkProps> = (args) => (
 export const Default = Template.bind({});
 export const Underline = Template.bind({});
 export const Icon = Template.bind({});
+export const TargetSelf = Template.bind({});
+export const Download = Template.bind({});
 
 Default.args = {
-  children: 'test',
+  children: 'link',
   href: 'https://github.com/DiegoSt23/delta-ui',
+  target: '_blank',
 };
 
 Underline.args = {
-  children: 'test',
+  children: 'link',
   href: 'https://github.com/DiegoSt23/delta-ui',
   textDecoration: 'underline',
+  target: '_blank',
 };
 
 Icon.args = {
   children: <AiFillAndroid />,
   href: 'https://github.com/DiegoSt23/delta-ui',
   textDecoration: 'underline',
+  target: '_blank',
+};
+
+TargetSelf.args = {
+  children: 'link',
+  href: 'https://es.react.dev/',
+};
+
+Download.args = {
+  children: 'download',
+  href: '#',
+  download: true,
 };
