@@ -35,4 +35,4 @@ const App = () => (
 ```
 
 ### Storybook
-Find more information [here](https://64c82a77442a234e83128ff8-nnybsbsnys.chromatic.com/?path=/story/deltaui-alert--info).
+Find more information [here](https://64c82a77442a234e83128ff8-gshgyegotf.chromatic.com/?path=/story/deltaui-badge--custom-indicator).
