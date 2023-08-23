@@ -46,19 +46,27 @@
   @include paragraph-styles;
   color: $white-2;
   font-size: large;
+  letter-spacing: 0.5px;
+  line-height: 1.5rem;
 }
 
 .paragraph {
   @include paragraph-styles;
   font-size: medium;
+  letter-spacing: 0.5px;
+  line-height: 1.5rem;
 }
 
 .paragraph2 {
   @include paragraph-styles;
   font-size: small;
+  letter-spacing: 0.5px;
+  line-height: 1.2rem;
 }
 
 .paragraph3 {
   @include paragraph-styles;
   font-size: x-small;
+  letter-spacing: 0.5px;
+  line-height: 1rem;
 }

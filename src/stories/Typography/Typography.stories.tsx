@@ -18,7 +18,7 @@ const Template: StoryFn<TypographyProps> = (args) => (
       justifyContent: 'center',
       backgroundColor: '#000000',
       padding: 60,
-      gap: 20,
+      gap: 30,
     }}
   >
     <Typography {...args} type='heading1'>
@@ -34,16 +34,25 @@ const Template: StoryFn<TypographyProps> = (args) => (
       h4. Lorem Ipsum
     </Typography>
     <Typography {...args} type='subtitle'>
-      subtitle. Lorem Ipsum
+      subtitle. Lorem ipsum
     </Typography>
     <Typography {...args} type='paragraph'>
-      p. Lorem Ipsum
+      paragraph. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Impedit sit, eum in unde illum voluptatibus, odit officiis perspiciatis
+      voluptates reprehenderit, culpa velit ipsa iusto? Inventore, voluptate.
+      Nemo excepturi corrupti est!
     </Typography>
     <Typography {...args} type='paragraph2'>
-      p. Lorem Ipsum
+      paragraph2. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Impedit sit, eum in unde illum voluptatibus, odit officiis perspiciatis
+      voluptates reprehenderit, culpa velit ipsa iusto? Inventore, voluptate.
+      Nemo excepturi corrupti est!
     </Typography>
     <Typography {...args} type='paragraph3'>
-      p. Lorem Ipsum
+      paragraph3. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Impedit sit, eum in unde illum voluptatibus, odit officiis perspiciatis
+      voluptates reprehenderit, culpa velit ipsa iusto? Inventore, voluptate.
+      Nemo excepturi corrupti est!
     </Typography>
   </div>
 );

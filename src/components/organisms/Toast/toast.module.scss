@@ -1,17 +1,17 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
-.toastMainContainer {
+@mixin toast-main-container-styles {
   position: fixed;
   display: flex;
-  justify-content: flex-end;
-  padding: 10px;
   width: 100%;
   height: 100vh;
   pointer-events: none;
   overflow: hidden;
+  padding: 20px;
 
-  .toastContainer {
+  .toast {
+    max-width: calc(100% - 40px);
     width: fit-content;
     height: fit-content;
     border-radius: 10px;
@@ -19,5 +19,26 @@
     box-shadow: 0px 5px 5px 5px #00000029;
     pointer-events: all;
     transition: all ease 0.2s;
+    position: absolute;
   }
+}
+
+.topRight {
+  @include toast-main-container-styles;
+  justify-content: flex-end;
+}
+
+.topLeft {
+  @include toast-main-container-styles;
+}
+
+.bottomRight {
+ @include toast-main-container-styles;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.bottomLeft {
+  @include toast-main-container-styles;
+  align-items: flex-end;
 }

@@ -1,0 +1,53 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin full-width {
+  width: 100%;
+}
+
+.collapsibleMainContainer {
+  @include full-width;
+  height: fit-content;
+  border-left: solid 4px #202020;
+  border-radius: 10px;
+  background: -webkit-linear-gradient(-45deg,#3b3b3b68,#3b3b3b39);
+  backdrop-filter: blur(10px);
+  transition: all ease 0.3s;
+
+  &:hover {
+    background: -webkit-linear-gradient(-45deg,#3b3b3b7e,#3b3b3b4d);
+    border-left: solid 4px #2c2c2c;
+    transition: all ease 0.3s;
+  }
+
+  .headerButton {
+    @include full-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+
+    .title {
+      color: $white-2;
+    }
+
+    .openButton {
+      transition: all ease 0.3s;
+    }
+  }
+
+  .collapsible {
+    @include full-width;
+    overflow: hidden;
+    transition: all ease 0.4s;
+
+    .contentContainer {
+      @include full-width;
+      padding: 10px 20px 20px 40px;
+    }
+  }
+}
