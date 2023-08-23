@@ -4,3 +4,4 @@ export * from './Menu';
 export * from './NavBarItem';
 export * from './TableRow';
 export * from './Alert';
+export * from './Collapsible';

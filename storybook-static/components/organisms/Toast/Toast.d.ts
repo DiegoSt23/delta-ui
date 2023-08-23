@@ -1,12 +1,10 @@
-import { Dispatch, SetStateAction } from 'react';
+/// <reference types="react" />
 import { AlertProps } from '../../molecules';
+export interface ToastRefProps {
+    handleDisplayToast: () => void;
+}
 export interface ToastProps extends AlertProps {
-    displayToast: boolean;
-    resetDisplayToast: Dispatch<SetStateAction<boolean>>;
-    position?: 'top-right' | 'top-left' | ' center';
+    position?: 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft';
     clearAfter?: number;
 }
-export declare const Toast: {
-    ({ displayToast, resetDisplayToast, position, clearAfter, text, title, variant, customIcon, action, actionElement, mainContainerClassName, textClassName, }: ToastProps): false | import("react/jsx-runtime").JSX.Element;
-    defaultProps: Partial<ToastProps>;
-};
+export declare const Toast: import("react").ForwardRefExoticComponent<ToastProps & import("react").RefAttributes<ToastRefProps>>;
