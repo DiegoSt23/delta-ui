@@ -1,6 +1,6 @@
 {
   "name": "diego-react-delta-ui",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React components library",
   "type": "module",
   "main": "./dist/diego-react-delta-ui.umd.cjs",
@@ -9,7 +9,7 @@
     "name": "Diego Alvarez"
   },
   "license": "MIT",
-  "homepage": "https://64c82a77442a234e83128ff8-gehuwqzqiu.chromatic.com/?path=/docs/deltaui-avatar--docs",
+  "homepage": "https://diego-delta-ui.vercel.app/?path=/story/deltaui-accordion--default",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DiegoSt23/delta-ui.git"

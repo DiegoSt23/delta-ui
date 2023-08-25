@@ -19,6 +19,8 @@ export interface InputProps {
   error?: boolean;
   maxLength?: number;
   minLength?: number;
+  onBlur?: () => void;
+  onFocus?: () => void;
   containerClassName?: string;
   inputClassName?: string;
 }
@@ -34,6 +36,8 @@ const defaultProps: Partial<InputProps> = {
   helperText: '',
   maxLength: undefined,
   minLength: undefined,
+  onBlur: undefined,
+  onFocus: undefined,
   containerClassName: undefined,
   inputClassName: undefined,
 };
@@ -53,6 +57,8 @@ export const Input = ({
   error,
   maxLength,
   minLength,
+  onBlur,
+  onFocus,
   containerClassName,
   inputClassName,
 }: InputProps) => {
@@ -89,6 +95,8 @@ export const Input = ({
           disabled={disabled}
           maxLength={maxLength}
           minLength={minLength}
+          onBlur={onBlur}
+          onFocus={onFocus}
           className={[styles.input, inputClassName].join(' ')}
           style={{
             width: buttonContent ? '90%' : '100%',

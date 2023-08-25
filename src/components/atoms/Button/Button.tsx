@@ -10,6 +10,7 @@ export interface ButtonProps {
   fullWidth?: boolean;
   icon?: ReactNode;
   iconPosition?: 'prefix' | 'suffix';
+  type?: 'button' | 'submit';
   className?: string;
 }
 
@@ -20,6 +21,7 @@ const defaultProps: Partial<ButtonProps> = {
   fullWidth: false,
   icon: undefined,
   iconPosition: 'prefix',
+  type: 'button',
   className: undefined,
 };
 
@@ -32,6 +34,7 @@ export const Button = ({
   fullWidth,
   icon,
   iconPosition,
+  type,
   className,
 }: ButtonProps) => (
   <button
@@ -44,6 +47,7 @@ export const Button = ({
     className={[styles[variant || 'default'], className].join(' ')}
     onClick={onClick}
     disabled={disabled}
+    type={type}
   >
     {icon && iconPosition === 'prefix' && icon}
     {children}

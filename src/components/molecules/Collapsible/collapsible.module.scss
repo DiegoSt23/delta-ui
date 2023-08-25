@@ -8,7 +8,7 @@
 .collapsibleMainContainer {
   @include full-width;
   height: fit-content;
-  border-left: solid 4px #202020;
+  border-left: solid 4px #87878738;
   border-radius: 10px;
   background: -webkit-linear-gradient(-45deg,#3b3b3b68,#3b3b3b39);
   backdrop-filter: blur(10px);
@@ -16,7 +16,6 @@
 
   &:hover {
     background: -webkit-linear-gradient(-45deg,#3b3b3b7e,#3b3b3b4d);
-    border-left: solid 4px #2c2c2c;
     transition: all ease 0.3s;
   }
 
@@ -43,7 +42,7 @@
   .collapsible {
     @include full-width;
     overflow: hidden;
-    transition: all ease 0.4s;
+    transition: all ease 0.3s;
 
     .contentContainer {
       @include full-width;
