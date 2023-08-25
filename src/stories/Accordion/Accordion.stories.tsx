@@ -15,7 +15,8 @@ const Template: StoryFn<AccordionProps> = (args) => (
       display: 'flex',
       flexDirection: 'column',
       backgroundColor: '#000000',
-      padding: '20px 60px',
+      padding: 20,
+      gap: 30
     }}
   >
     <Accordion {...args} />
