@@ -34,4 +34,4 @@ const App = () => (
 );
 ```
 
-[Storybook](https://diego-delta-ui.vercel.app/?path=/docs/deltaui-accordion--docs).
+[Storybook](https://diego-delta-ui.vercel.app/?path=/docs/deltaui-accordion--docs)
