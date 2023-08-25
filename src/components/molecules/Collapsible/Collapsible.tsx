@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { ReactNode, useState, useEffect } from 'react';
 import { Plus } from '../../../assets/icons';
 import { Typography } from '../../atoms';
 import styles from './collapsible.module.scss';
@@ -6,6 +7,9 @@ import styles from './collapsible.module.scss';
 export interface CollapsibleProps {
   title: string;
   content: ReactNode;
+  defaultOpen?: boolean;
+  onPress?: () => void;
+  backgroundColor?: string;
   mainContainerClassName?: string;
   headerClassName?: string;
   titleClassName?: string;
@@ -13,6 +17,9 @@ export interface CollapsibleProps {
 }
 
 const defaultProps: Partial<CollapsibleProps> = {
+  defaultOpen: false,
+  onPress: undefined,
+  backgroundColor: undefined,
   mainContainerClassName: undefined,
   headerClassName: undefined,
   titleClassName: undefined,
@@ -22,21 +29,32 @@ const defaultProps: Partial<CollapsibleProps> = {
 export const Collapsible = ({
   title,
   content,
+  defaultOpen,
+  onPress,
+  backgroundColor,
   mainContainerClassName,
   headerClassName,
   titleClassName,
   contentClassName,
 }: CollapsibleProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(defaultOpen || false);
   const [scrollHeight, setScrollHeight] = useState<number>(0);
 
-  const handleOpen = () => setIsOpen(!isOpen);
+  const handleOpen = () => {
+    if (onPress) onPress();
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    setIsOpen(defaultOpen || false);
+  }, [defaultOpen]);
 
   return (
     <div
       className={[styles.collapsibleMainContainer, mainContainerClassName].join(
         ' '
       )}
+      style={{ backgroundColor }}
     >
       <button
         className={[styles.headerButton, headerClassName].join(' ')}

@@ -22,19 +22,31 @@ const Template: StoryFn<CollapsibleProps> = (args) => (
     <Collapsible
       {...args}
       content={
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quod
-          earum illo id delectus accusantium quas sapiente provident est et
-          dolore, similique dicta eligendi tempore laudantium placeat tempora
-          unde molestias!
-        </Typography>
+        <>
+          <Typography type="subtitle">
+            This receives ReactNode, you can place any content that you want.
+          </Typography>
+          <br />
+          <Typography>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quod
+            earum illo id delectus accusantium quas sapiente provident est et
+            dolore, similique dicta eligendi tempore laudantium placeat tempora
+            unde molestias!
+          </Typography>
+        </>
       }
     />
   </div>
 );
 
 export const Default = Template.bind({});
+export const CustomColor = Template.bind({});
 
 Default.args = {
   title: 'Collapsible Title',
+};
+
+CustomColor.args = {
+  title: 'Collapsible Title',
+  backgroundColor: '#8120ff2b',
 };

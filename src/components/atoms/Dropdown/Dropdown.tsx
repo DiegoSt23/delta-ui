@@ -45,24 +45,29 @@ export const Dropdown = ({
   optionClassName,
 }: DropdownProps) => {
   const [displayDropdown, setDisplayDropdown] = useState<boolean>(false);
+  const [applyChanges, setApplyChanges] = useState<boolean>(false);
+  const [opacity, setOpacity] = useState<number>(0);
+  const [translateY, setTranslateY] = useState<number>(-20);
   const [selectedOptionValue, setSelectedOptionValue] = useState<
     string | number | undefined
   >(undefined);
   const [selectedOptionText, setSelectedOptionText] = useState<
     string | undefined
   >(undefined);
-  const [opacity, setOpacity] = useState<number>(0);
-  const [translateY, setTranslateY] = useState<number>(-20);
 
   const handleDisplayDropdown = () => {
     if (displayDropdown) {
       setOpacity(0);
       setTranslateY(-20);
+      setApplyChanges(false);
+
       setTimeout(() => {
         setDisplayDropdown(false);
       }, 300);
     } else {
       setDisplayDropdown(true);
+      setApplyChanges(true);
+
       setTimeout(() => {
         setOpacity(1);
         setTranslateY(0);
@@ -85,15 +90,18 @@ export const Dropdown = ({
       {label && <p className={styles.label}>{label}</p>}
       <button
         className={[styles.button, mainContainerClassName].join(' ')}
-        style={{ borderColor: error ? '#ff1b63' : '#80808044' }}
+        style={{
+          borderColor: error ? '#ff1b63' : '#80808044',
+          borderRadius: applyChanges ? ' 10px 10px 0px 0px' : 10,
+        }}
         onClick={handleDisplayDropdown}
         disabled={disabled}
       >
         {selectedOptionText || placeholder}
         <ArrowDown
-          width={15}
-          height={15}
-          style={{ transform: `rotate(${displayDropdown ? 180 : 0}deg)` }}
+          width={20}
+          height={20}
+          style={{ transform: `rotate(${applyChanges ? 180 : 0}deg)` }}
           className={styles.arrow}
         />
       </button>
@@ -118,7 +126,7 @@ export const Dropdown = ({
           )}
           style={{
             opacity,
-            transform: `translateY(${translateY}px)`,
+            transform: `translateY(${helperText ? translateY - 22 : translateY}px)`,
           }}
           disabled={disabled}
         >

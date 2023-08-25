@@ -34,5 +34,4 @@ const App = () => (
 );
 ```
 
-### Storybook
-Find more information [here](https://diego-delta-ui.vercel.app/?path=/docs/deltaui-accordion--docs).
+[Storybook](https://diego-delta-ui.vercel.app/?path=/docs/deltaui-accordion--docs).
