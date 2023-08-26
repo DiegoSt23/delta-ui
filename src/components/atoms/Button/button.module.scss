@@ -19,7 +19,7 @@
   &:disabled {
     filter: saturate(0.5);
     opacity: 0.6;
-    cursor: auto;
+    cursor: not-allowed;
   }
 
   &:not(:disabled):hover {
@@ -56,7 +56,7 @@
   &:disabled {
     filter: saturate(0.5);
     opacity: 0.6;
-    cursor: auto;
+    cursor: not-allowed;
   }
 
   &:not(:disabled):hover {
@@ -90,7 +90,7 @@
   &:disabled {
     filter: saturate(0.5);
     opacity: 0.6;
-    cursor: auto;
+    cursor: not-allowed;
   }
 
   &:not(:disabled):hover {

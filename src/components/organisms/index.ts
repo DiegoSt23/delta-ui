@@ -4,3 +4,4 @@ export * from './Table';
 export * from './SideNavBar';
 export * from './Toast';
 export * from './Accordion';
+export * from './Tabs';
