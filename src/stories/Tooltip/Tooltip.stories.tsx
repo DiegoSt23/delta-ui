@@ -1,6 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
-import { Tooltip, TooltipProps, Typography } from '../../components';
-import { BsInfoCircle, BsFillBrightnessHighFill } from 'react-icons/bs';
+import { Tooltip, TooltipProps } from '../../components';
+import { BsInfoCircle } from 'react-icons/bs';
+import { IoIosFlash } from 'react-icons/io';
 
 export default {
   title: 'DeltaUI/Tooltip',
@@ -56,11 +57,28 @@ Right.args = {
 CustomElement.args = {
   children: <BsInfoCircle color='gray' size={20} />,
   tooltipContent: (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-      <BsFillBrightnessHighFill color='gray' />
-      <Typography type='paragraph'>
-        Icon and text
-      </Typography>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 5,
+      }}
+    >
+      <IoIosFlash color='#e2c41a' size={25} />
+      <p
+        style={{
+          color: '#d9d9d9',
+          textAlign: 'center',
+          fontFamily: 'Roboto',
+          letterSpacing: 1,
+          fontSize: 12,
+          lineHeight: 1.5,
+        }}
+      >
+        The tooltip can receive also ReactNode
+      </p>
     </div>
   ),
 };

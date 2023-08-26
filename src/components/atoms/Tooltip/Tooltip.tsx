@@ -30,7 +30,7 @@ export const Tooltip = ({
       style={{ maxWidth }}
     >
       {typeof tooltipContent === 'string' ? (
-        <Typography type='paragraph2'>{tooltipContent}</Typography>
+        <Typography type='paragraph2' className={styles.text}>{tooltipContent}</Typography>
       ) : (
         tooltipContent
       )}
