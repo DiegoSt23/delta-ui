@@ -1,0 +1,328 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/global.scss";
+
+@mixin spin-styles {
+  border-top: 3px solid $white-2;
+  border-right: 3px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+@mixin spin-2-styles {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid $white-2;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin spin-2-styles-after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  border-bottom: 3px solid $white-2;
+  border-left: 3px solid transparent;
+}
+
+@mixin double-spin-styles {
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+}
+
+@mixin double-spin-styles-after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: $white-2 transparent;
+}
+
+@mixin pulse-styles {
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  animation: pulse 1s linear infinite;
+
+  @keyframes scaleUp {
+    0% { transform: translate(-50%, -50%) scale(0) }
+    60% , 100% { transform: translate(-50%, -50%)  scale(1)}
+  }
+
+  @keyframes pulse {
+    0% , 60% , 100%{ transform:  scale(1) }
+    80% { transform:  scale(1.2)}
+  }
+}
+
+@mixin pulse-styles-after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: scaleUp 1s linear infinite;
+}
+
+@mixin pulse-2-styles {
+  background: $white-2;
+  display: inline-block;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: animloader 1s ease-in infinite;
+
+  @keyframes animloader {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+}
+
+@mixin dots-styles {
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+//Variants
+
+.spin {
+  .sm {
+    @include spin-styles;
+    width: 20px;
+    height: 20px;
+  }
+
+  .md {
+    @include spin-styles;
+    width: 35px;
+    height: 35px;
+  }
+
+  .lg {
+    @include spin-styles;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.spin2 {
+  .sm {
+    @include spin-2-styles;
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      @include spin-2-styles-after;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .md {
+    @include spin-2-styles;
+    width: 35px;
+    height: 35px;
+
+    &::after {
+      @include spin-2-styles-after;
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .lg {
+    @include spin-2-styles;
+    width: 50px;
+    height: 50px;
+
+    &::after {
+      @include spin-2-styles-after;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.doubleSpin {
+  .sm {
+    @include double-spin-styles;
+    width: 20px;
+    height: 20px;
+    border: 3px solid $white-2;
+
+    &::after {
+      @include double-spin-styles-after;
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .md {
+    @include double-spin-styles;
+    width: 35px;
+    height: 35px;
+    border: 4px solid $white-2;
+
+    &::after {
+      @include double-spin-styles-after;
+      width: 43px;
+      height: 43px;
+    }
+  }
+
+  .lg {
+    @include double-spin-styles;
+    width: 50px;
+    height: 50px;
+    border: 6px solid $white-2;
+
+    &::after {
+      @include double-spin-styles-after;
+      width: 58px;
+      height: 58px;
+    }
+  }
+}
+
+.pulse {
+  .sm {
+    @include pulse-styles;
+    width: 20px;
+    height: 20px;
+    border: 3px solid $white-2;
+
+    &::after {
+      @include pulse-styles-after;
+      width: 20px;
+      height: 20px;
+      border: 3px solid $white-2;
+    }
+  }
+
+  .md {
+    @include pulse-styles;
+    width: 35px;
+    height: 35px;
+    border: 4px solid $white-2;
+
+    &::after {
+      @include pulse-styles-after;
+      width: 35px;
+      height: 35px;
+      border: 4px solid $white-2;
+    }
+  }
+
+  .lg {
+    @include pulse-styles;
+    width: 50px;
+    height: 50px;
+    border: 6px solid $white-2;
+
+    &::after {
+      @include pulse-styles-after;
+      width: 50px;
+      height: 50px;
+      border: 6px solid $white-2;
+    }
+  }
+}
+
+.pulse2 {
+  .sm {
+    @include pulse-2-styles;
+    width: 25px;
+    height: 25px;
+  }
+
+  .md {
+    @include pulse-2-styles;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lg {
+    @include pulse-2-styles;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.dots {
+  .sm {
+    @include dots-styles;
+    width: 20px;
+    height: 20px;
+    border: 3px dotted $white-2;
+  }
+
+  .md {
+    @include dots-styles;
+    width: 35px;
+    height: 35px;
+    border: 5px dotted $white-2;
+  }
+
+  .lg {
+    @include dots-styles;
+    width: 50px;
+    height: 50px;
+    border: 6px dotted $white-2;
+  }
+}
