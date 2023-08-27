@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { Table, TableProps } from '../../components';
+import { Table, TableProps, Card } from '../../components';
 
 export default {
   title: 'DeltaUI/Table',
@@ -18,15 +18,20 @@ const Template: StoryFn<TableProps> = (args) => (
       padding: 60,
     }}
   >
-    <Table {...args} />
+    <Card headerTitle='Shingeki' fullWidth>
+      <Table {...args} />
+    </Card>
+    {/* <Table {...args} /> */}
   </div>
 );
 
 export const Default = Template.bind({});
+export const CustomMinWidth = Template.bind({});
 export const Underline = Template.bind({});
 export const LabelOptions = Template.bind({});
 export const LabelOptionsCustomIcon = Template.bind({});
 export const CheckboxSelection = Template.bind({});
+export const Loading = Template.bind({});
 
 const labels = [
   {
@@ -224,6 +229,13 @@ Default.args = {
   justifyContent: 'flex-start',
 };
 
+CustomMinWidth.args = {
+  labels,
+  items,
+  justifyContent: 'flex-start',
+  minWidth: 1500,
+};
+
 Underline.args = {
   labels,
   items,
@@ -252,4 +264,11 @@ CheckboxSelection.args = {
   underline: true,
   checkboxSelection: true,
   onRowsSelection: (values) => console.log(values),
+};
+
+Loading.args = {
+  labels,
+  items,
+  justifyContent: 'flex-start',
+  loading: true,
 };

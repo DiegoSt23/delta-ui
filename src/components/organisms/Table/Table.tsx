@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useState, useEffect } from 'react';
 import { TableRow } from '../../molecules';
+import { Spinner } from '../../atoms';
 import styles from './table.module.scss';
 
 type CellContentProps = string | number | ReactNode;
@@ -27,6 +29,11 @@ export interface TableProps {
   underline?: boolean;
   checkboxSelection?: boolean;
   onRowsSelection?: (values: (string | number)[]) => void;
+  loading?: boolean;
+  loadingProps?: {
+    variant?: 'spin' | 'spin2' | 'doubleSpin' | 'pulse' | 'pulse2' | 'dots';
+    size?: 'sm' | 'md' | 'lg';
+  };
   mainContainerClassName?: string;
   bodyRowsClassName?: string;
   headerRowClassName?: string;
@@ -38,6 +45,11 @@ const defaultProps: Partial<TableProps> = {
   underline: false,
   checkboxSelection: false,
   onRowsSelection: undefined,
+  loading: false,
+  loadingProps: {
+    variant: 'spin',
+    size: 'md',
+  },
   mainContainerClassName: undefined,
   bodyRowsClassName: undefined,
   headerRowClassName: undefined,
@@ -69,6 +81,8 @@ export const Table = ({
   underline,
   checkboxSelection,
   onRowsSelection,
+  loading,
+  loadingProps,
   mainContainerClassName,
   bodyRowsClassName,
   headerRowClassName,
@@ -105,11 +119,15 @@ export const Table = ({
 
   return (
     <div className={[styles.tableContainer, mainContainerClassName].join(' ')}>
-      <div style={{ minWidth }} className={styles.tableSubContainer}>
+      <div
+        style={{ minWidth, opacity: loading ? 0.4 : 1 }}
+        className={styles.tableSubContainer}
+      >
         <div className={styles.header}>
           <TableRow
             items={labels}
             type='header'
+            justifyContent={justifyContent}
             checkboxSelection={checkboxSelection}
             mainContainerClassName={headerRowClassName}
           />
@@ -128,6 +146,11 @@ export const Table = ({
           ))}
         </div>
       </div>
+      {loading && (
+        <div className={styles.spinnerContainer}>
+          <Spinner {...loadingProps} />
+        </div>
+      )}
     </div>
   );
 };
