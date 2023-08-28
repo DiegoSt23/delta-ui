@@ -11,9 +11,7 @@ const Template: StoryFn<CollapsibleProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
+      minHeight: '100vh',
       backgroundColor: '#000000',
       padding: 20,
       gap: 5,
@@ -23,7 +21,7 @@ const Template: StoryFn<CollapsibleProps> = (args) => (
       {...args}
       content={
         <>
-          <Typography type="subtitle">
+          <Typography type='subtitle'>
             This receives ReactNode, you can place any content that you want.
           </Typography>
           <br />

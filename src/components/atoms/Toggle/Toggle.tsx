@@ -19,7 +19,7 @@ export interface ToggleProps {
 
 const defaultProps: Partial<ToggleProps> = {
   label: '',
-  size: 'md',
+  size: 'sm',
   disabled: false,
   buttonColor: '#303030',
   color: '#31dab5',

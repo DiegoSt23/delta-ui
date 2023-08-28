@@ -17,12 +17,9 @@ const Template: StoryFn<ModalProps> = (args) => {
     <div
       style={{
         width: '100%',
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        minHeight: '100vh',
         backgroundColor: '#000000',
-        padding: 60,
+        padding: 20,
       }}
     >
       <Button onClick={handleOpenModal}>Open</Button>

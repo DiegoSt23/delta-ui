@@ -11,13 +11,9 @@ const Template: StoryFn<TextAreaProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
+      minHeight: '100vh',
       backgroundColor: '#000000',
-      padding: 60,
+      padding: 20,
     }}
   >
     <TextArea {...args} />

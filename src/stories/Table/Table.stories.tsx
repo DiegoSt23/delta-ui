@@ -12,10 +12,10 @@ const Template: StoryFn<TableProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
+      minHeight: '100vh',
       overflowY: 'auto',
       backgroundColor: '#000000',
-      padding: 60,
+      padding: 20,
     }}
   >
     <Card headerTitle='Shingeki' fullWidth>

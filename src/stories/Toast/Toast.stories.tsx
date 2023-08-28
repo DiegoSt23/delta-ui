@@ -19,16 +19,13 @@ const Template: StoryFn<ToastProps> = (args) => {
         width: '100%',
         height: '100vh',
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         backgroundColor: '#000000',
-        padding: 60,
+        padding: 20,
       }}
     >
-      <Toast
-        {...args}
-        ref={ref}
-      />
+      <Toast {...args} ref={ref} />
       <Button onClick={handleDisplayToast}>Trigger Toast</Button>
     </div>
   );

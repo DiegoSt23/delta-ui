@@ -12,12 +12,9 @@ const Template: StoryFn<BadgeProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      minHeight: '100vh',
       backgroundColor: '#000000',
-      padding: 60,
+      padding: 20,
     }}
   >
     <Badge {...args} />
@@ -34,42 +31,42 @@ export const CustomColor = Template.bind({});
 export const CustomIndicator = Template.bind({});
 
 Dot.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
 };
 
 Count.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   count: 2,
   dot: false,
 };
 
 CountBigNumber.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   count: 287878,
   dot: false,
 };
 
 BottomRight.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   indicatorPosition: 'bottomRight',
 };
 
 TopLeft.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   indicatorPosition: 'topLeft',
 };
 
 BottomLeft.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   indicatorPosition: 'bottomLeft',
 };
 
 CustomColor.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   indicatorColor: '#31dab5',
 };
 
 CustomIndicator.args = {
-  children: <Avatar name='Diego Alvarez' />,
+  children: <Avatar name='Diego Alvarez' size="sm" />,
   customIndicator: <IoAlertCircleSharp size={15} color='#ff6404' />,
 };

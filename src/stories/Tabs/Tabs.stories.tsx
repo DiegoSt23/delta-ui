@@ -12,7 +12,7 @@ const Template: StoryFn<TabsProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
+      minHeight: '100vh',
       backgroundColor: '#000000',
       padding: 20,
     }}
