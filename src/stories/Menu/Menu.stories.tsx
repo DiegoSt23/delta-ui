@@ -14,13 +14,12 @@ export default {
 const Template: StoryFn<MenuProps> = (args) => (
   <div
     style={{
-      width: '100%',
-      height: '100vh',
+      minWidth: '100%',
+      minHeight: '100vh',
       display: 'flex',
-      alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#000000',
-      padding: 60,
+      padding: 20,
     }}
   >
     <Menu {...args} />

@@ -28,6 +28,7 @@
 
 .badgeMainContainer {
   position: relative;
+  width: fit-content;
   
   .topRight {
     @include general-styles;

@@ -12,13 +12,11 @@ const Template: StoryFn<ChipProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
+      minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
       backgroundColor: '#000000',
-      padding: 60,
+      padding: 20,
       gap: 10,
     }}
   >

@@ -13,6 +13,8 @@ export interface TextAreaProps {
   helperText?: string;
   error?: boolean;
   numberOfRows?: number;
+  onBlur?: () => void;
+  onFocus?: () => void;
   className?: string;
 }
 
@@ -26,6 +28,8 @@ const defaultProps: Partial<TextAreaProps> = {
   helperText: '',
   error: false,
   numberOfRows: 2,
+  onBlur: undefined,
+  onFocus: undefined,
   className: undefined,
 };
 
@@ -41,6 +45,8 @@ export const TextArea = ({
   helperText,
   error,
   numberOfRows,
+  onBlur,
+  onFocus,
   className,
 }: TextAreaProps) => {
   const [val, setVal] = useState<string>(value);
@@ -66,6 +72,8 @@ export const TextArea = ({
         rows={numberOfRows}
         disabled={disabled}
         style={{ borderColor: error ? '#ff1b63' : '#80808044' }}
+        onBlur={onBlur}
+        onFocus={onFocus}
       />
       {helperText && (
         <p

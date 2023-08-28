@@ -36,6 +36,7 @@ export interface AlertProps {
   customIcon?: ReactNode;
   action?: () => void;
   actionElement?: ReactNode;
+  fullWidth?: boolean;
   mainContainerClassName?: string;
   textClassName?: string;
 }
@@ -46,6 +47,7 @@ const defaultProps: Partial<AlertProps> = {
   customIcon: undefined,
   action: undefined,
   actionElement: undefined,
+  fullWidth: false,
   mainContainerClassName: undefined,
   textClassName: undefined,
 };
@@ -57,12 +59,13 @@ export const Alert = ({
   customIcon,
   action,
   actionElement,
+  fullWidth,
   mainContainerClassName,
   textClassName,
 }: AlertProps) => (
   <div
     className={[styles.alertMainContainer, mainContainerClassName].join(' ')}
-    style={{ background: bgColors[variant || 'info'], border: `solid 1px ${borderColors[variant || 'info']}` }}
+    style={{ background: bgColors[variant || 'info'], border: `solid 1px ${borderColors[variant || 'info']}`, width: fullWidth ? '100%' : 'fit-content' }}
   >
     {customIcon || icons[variant || 'info']}
     <div

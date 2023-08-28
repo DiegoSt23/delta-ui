@@ -12,12 +12,9 @@ const Template: StoryFn<AlertProps> = (args) => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      minHeight: '100vh',
       backgroundColor: '#000000',
-      padding: 60,
+      padding: 20,
     }}
   >
     <Alert {...args} />
@@ -31,6 +28,7 @@ export const Error = Template.bind({});
 export const WithTitle = Template.bind({});
 export const CustomIcon = Template.bind({});
 export const Action = Template.bind({});
+export const FullWidth = Template.bind({});
 
 Info.args = {
   text: 'You can display any message that you want',
@@ -65,4 +63,9 @@ Action.args = {
   text: 'You can display any message that you want',
   action: () => alert('You can place any function that you want, this just triggers an alert. Also the content of the button could be string | ReactNode'),
   actionElement: 'FUNC',
+};
+
+FullWidth.args = {
+  text: 'You can display any message that you want',
+  fullWidth: true,
 };
