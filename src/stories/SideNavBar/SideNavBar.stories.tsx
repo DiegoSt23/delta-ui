@@ -24,10 +24,9 @@ const Template: StoryFn<SideNavBarProps> = (args) => (
   </div>
 );
 
-export const Centered = Template.bind({});
-export const CenteredWithMainIcon = Template.bind({});
-export const Start = Template.bind({});
-export const StartWithMainIcon = Template.bind({});
+export const Default = Template.bind({});
+export const WithMainIcon = Template.bind({});
+export const WithBottomItems = Template.bind({});
 
 const items = [
   {
@@ -37,61 +36,59 @@ const items = [
     isActive: true,
   },
   {
-    name: 'Option 1',
+    name: 'Search',
     icon: <AiOutlineSearch size={20} />,
     onClick: () => console.log('option 1 triggered'),
     isActive: false,
   },
   {
-    name: 'Option 2',
+    name: 'Albums',
     icon: <BiLibrary size={20} />,
     onClick: () => console.log('option 2 triggered'),
     isActive: false,
   },
   {
-    name: 'Option 3',
+    name: 'Playlists',
     icon: <IoMdAlbums size={20} />,
     onClick: () => console.log('option 3 triggered'),
     isActive: false,
   },
   {
-    name: 'Option 4',
+    name: 'Songs',
     icon: <IoIosMusicalNote size={20} />,
     onClick: () => console.log('option 4 triggered'),
     isActive: false,
   },
+];
+
+const bottomItems = [
   {
-    name: 'Option 5',
-    icon: <BsPersonCircle size={20} />,
-    onClick: () => console.log('option 5 triggered'),
-    isActive: false,
-  },
-  {
-    name: 'Option 6',
+    name: 'Settings',
     icon: <BsGearWide size={20} />,
     onClick: () => console.log('option 6 triggered'),
     isActive: false,
   },
+  {
+    name: 'Profile',
+    icon: <BsPersonCircle size={20} />,
+    onClick: () => console.log('option 5 triggered'),
+    isActive: false,
+  },
 ];
 
-Centered.args = {
+Default.args = {
   items,
 };
 
-CenteredWithMainIcon.args = {
+WithMainIcon.args = {
   items,
   mainIcon: <BsSpotify size={30} color='#60e02d' />,
   onClickMainIcon: () => console.log('main icon pressed'),
 };
 
-Start.args = {
-  items,
-  itemsPosition: 'start',
-};
-
-StartWithMainIcon.args = {
+WithBottomItems.args = {
   items,
   mainIcon: <BsSpotify size={30} color='#60e02d' />,
   onClickMainIcon: () => console.log('main icon pressed'),
-  itemsPosition: 'start',
+  bottomItems,
 };
