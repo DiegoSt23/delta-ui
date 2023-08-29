@@ -9,3 +9,4 @@ export * from './Info';
 export * from './Success';
 export * from './Warning';
 export * from './Plus';
+export * from './ArrowRight';
