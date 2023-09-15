@@ -1,6 +1,10 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
+@mixin alert-font-family {
+  font-family: $roboto;
+}
+
 .alertMainContainer {
   width: 100%;
   padding: 10px;
@@ -23,18 +27,22 @@
 
       .success {
         color: #c1faaa;
+        @include alert-font-family;
       }
 
       .info {
         color: #949fd1;
+        @include alert-font-family;
       }
 
       .warning {
         color: #e8d478;
+        @include alert-font-family;
       }
 
       .error {
         color: #ff89ae;
+        @include alert-font-family;
       }
     }
 
