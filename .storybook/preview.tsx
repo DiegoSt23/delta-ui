@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDarkMode } from 'storybook-dark-mode';
 import { ThemeProvider } from '../src/context';
 
 export const parameters = {
@@ -11,28 +12,19 @@ export const parameters = {
     },
   },
   backgrounds: {
-    defaultBackground: 'Dark',
-    values: [
-      {
-        name: 'Light',
-        value: '#fff',
-      },
-      {
-        name: 'Dark',
-        value: '#000000',
-      },
-    ],
+    disable: true,
   },
 };
 
 export const decorators = [
-  (Story, {  globals }) => {
-    const { backgrounds: { value } } = globals;
-    const theme = ['#fff', 'transparent'].includes(value) ? 'Light' : 'Dark';
+  (Story) => {
+    const isDarkTheme = useDarkMode();
 
     return (
-      <ThemeProvider theme={theme}>
-        <Story />
+      <ThemeProvider theme={isDarkTheme ? 'Dark' : 'Light'}>
+        <div style={{ width: '100%', height: '100vh', backgroundColor: isDarkTheme ? '#000000' : '#fff' }}>
+          <Story />
+        </div>
       </ThemeProvider>
     );
   },
