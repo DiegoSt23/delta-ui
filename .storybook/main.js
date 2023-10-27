@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-mdx-gfm',
     '@storybook/addon-styling',
+    'storybook-dark-mode',
   ],
   framework: {
     name: '@storybook/react-vite',
