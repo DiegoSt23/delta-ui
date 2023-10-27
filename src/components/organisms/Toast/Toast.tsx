@@ -5,6 +5,7 @@ import {
   forwardRef,
   useImperativeHandle,
 } from 'react';
+import { useTheme } from '../../../context';
 import { Alert, AlertProps } from '../../molecules';
 import styles from './toast.module.scss';
 
@@ -49,6 +50,7 @@ export const Toast = forwardRef<ToastRefProps, ToastProps>(
     },
     ref
   ) => {
+    const theme = useTheme();
     const [displayLocalToast, setDisplayLocalToast] = useState<boolean>(false);
     const [opacity, setOpacity] = useState<number>(0);
     const [translateX, setTranslateX] = useState<number>(
@@ -101,7 +103,7 @@ export const Toast = forwardRef<ToastRefProps, ToastProps>(
       displayLocalToast && (
         <div className={styles[position || 'topRight']}>
           <div
-            className={styles.toast}
+            className={styles[`toast${theme}`]}
             style={{ opacity, transform: `translateX(${translateX}px)` }}
           >
             <Alert

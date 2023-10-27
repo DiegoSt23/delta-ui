@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import { useTheme } from '../../../context';
 import { Typography } from '../Typography';
 import styles from './toggle.module.scss';
 
@@ -21,8 +22,8 @@ const defaultProps: Partial<ToggleProps> = {
   label: '',
   size: 'sm',
   disabled: false,
-  buttonColor: '#303030',
-  color: '#31dab5',
+  buttonColor: undefined,
+  color: undefined,
   mainContainerClassName: undefined,
   labelClassName: undefined,
   buttonClassName: undefined,
@@ -48,6 +49,7 @@ export const Toggle = ({
   buttonClassName,
   toggleClassName,
 }: ToggleProps) => {
+  const theme = useTheme();
   const [localIsActive, setLocalIsActive] = useState<boolean>(isActive);
 
   const handleChangeActive = () => setLocalIsActive(!localIsActive);
@@ -66,8 +68,12 @@ export const Toggle = ({
       <button
         className={[styles[size || 'md'], buttonClassName].join(' ')}
         style={{
-          backgroundColor: localIsActive ? buttonColor : 'transparent',
-          border: `solid 2px ${buttonColor}`,
+          backgroundColor: localIsActive
+            ? buttonColor || (theme === 'Dark' ? '#303030' : '#d9d9d9')
+            : 'transparent',
+          border: `solid 2px ${
+            buttonColor || (theme === 'Dark' ? '#303030' : '#d9d9d9')
+          }`,
         }}
         onClick={handleChangeActive}
         disabled={disabled}
@@ -76,7 +82,8 @@ export const Toggle = ({
           className={[styles.toggle, toggleClassName].join(' ')}
           style={{
             left: isActive ? `${leftValues[size || 'md']}px` : '0px',
-            backgroundColor: color,
+            backgroundColor:
+              color || (theme === 'Dark' ? '#31dab5' : '#5650ff'),
           }}
         />
       </button>

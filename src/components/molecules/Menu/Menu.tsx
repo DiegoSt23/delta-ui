@@ -4,6 +4,7 @@ import {
   useRef,
   useEffect,
 } from 'react';
+import { useTheme } from '../../../context';
 import { Menu as DefaultIcon } from '../../../assets/icons';
 import { MenuItem, MenuItemProps } from '../../atoms';
 import styles from './menu.module.scss';
@@ -33,6 +34,7 @@ export const Menu = ({
   optionsContainerClassName,
   optionsClassName,
 }: MenuProps) => {
+  const theme = useTheme();
   const menuRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [opacity, setOpacity] = useState<number>(0);
@@ -94,7 +96,7 @@ export const Menu = ({
       {isOpen && (
         <div
           className={[
-            styles[position || 'right'],
+            styles[`${position}${theme}` || 'rightDark'],
             optionsContainerClassName,
           ].join(' ')}
           style={{

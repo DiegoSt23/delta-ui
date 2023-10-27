@@ -1,3 +1,4 @@
+import { useTheme } from '../../../context';
 import styles from './typography.module.scss';
 
 export interface TypographyProps {
@@ -7,6 +8,7 @@ export interface TypographyProps {
     | 'heading2'
     | 'heading3'
     | 'heading4'
+    | 'heading5'
     | 'subtitle'
     | 'paragraph'
     | 'paragraph2'
@@ -25,10 +27,14 @@ export const Typography = ({
   type,
   className,
   upperCase,
-}: TypographyProps) => (
-  <p className={[styles[type || 'paragraph'], className].join(' ')}>
-    {upperCase ? children.toUpperCase() : children}
-  </p>
-);
+}: TypographyProps) => {
+  const theme = useTheme();
+
+  return (
+    <p className={[styles[`${type}${theme}` || 'paragraphDark'], className].join(' ')}>
+      {upperCase ? children.toUpperCase() : children}
+    </p>
+  );
+};
 
 Typography.defaultProps = defaultProps;

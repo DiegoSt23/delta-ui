@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useState, useEffect } from 'react';
+import { useTheme } from '../../../context';
 import { Menu as OptionsIcon } from '../../../assets/icons';
 import { Typography, Checkbox } from '../../atoms';
 import { Menu } from '../Menu';
@@ -43,6 +44,7 @@ export const TableRow = ({
   onRowSelection,
   mainContainerClassName,
 }: TableRowProps) => {
+  const theme = useTheme();
   const [isRowSelected, setIsRowSelected] = useState<boolean>(false);
   const totalNumberOfColumns = items
     ?.map((item) => item.numberOfColumns)
@@ -60,7 +62,7 @@ export const TableRow = ({
       className={[styles.rowMainContainer, mainContainerClassName].join(' ')}
       style={{
         borderBottom: underline
-          ? 'solid 1px #4e4e4e55'
+          ? `solid 1px ${theme === 'Dark' ? '#4e4e4e55' : '#b9b9b953'}`
           : 'solid 0px transparent',
         paddingLeft: checkboxSelection ? '40px' : '0px',
       }}
@@ -88,16 +90,16 @@ export const TableRow = ({
           {item?.options?.length && type === 'header' && (
             <Menu
               width={item?.optionsMenuWidth || 'fit-content'}
-              position={
-                index === items.length - 1
-                  ? 'left'
-                  : 'right'
-              }
+              position={index === items.length - 1 ? 'left' : 'right'}
               items={item.options.map((option) => ({
                 title: option.item,
                 onClick: option.action,
               }))}
-              menuIcon={item?.optionsMenuIcon || <OptionsIcon width={15} height={15} color='#d9d9d9' />}
+              menuIcon={
+                item?.optionsMenuIcon || (
+                  <OptionsIcon width={15} height={15} fill='gray' />
+                )
+              }
             />
           )}
         </div>

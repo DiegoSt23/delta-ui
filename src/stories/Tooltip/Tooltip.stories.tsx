@@ -17,7 +17,6 @@ const Template: StoryFn<TooltipProps> = (args) => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#000000',
       padding: 60,
     }}
   >
@@ -69,7 +68,7 @@ CustomElement.args = {
       <IoIosFlash color='#e2c41a' size={25} />
       <p
         style={{
-          color: '#d9d9d9',
+          color: '#888888',
           textAlign: 'center',
           fontFamily: 'Roboto',
           letterSpacing: 1,

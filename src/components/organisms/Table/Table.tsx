@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useState, useEffect } from 'react';
+import { useTheme } from '../../../context';
 import { TableRow } from '../../molecules';
 import { Spinner } from '../../atoms';
 import styles from './table.module.scss';
@@ -87,6 +88,7 @@ export const Table = ({
   bodyRowsClassName,
   headerRowClassName,
 }: TableProps) => {
+  const theme = useTheme();
   const [localItems, setLocalItems] = useState<ItemProps[]>(items);
   const [selectedRows, setSelectedRows] = useState<(number | string)[]>([]);
   const columnsWidth = labels?.map(
@@ -118,7 +120,7 @@ export const Table = ({
   }, [items]);
 
   return (
-    <div className={[styles.tableContainer, mainContainerClassName].join(' ')}>
+    <div className={[styles[`tableContainer${theme}`], mainContainerClassName].join(' ')}>
       <div
         style={{ minWidth, opacity: loading ? 0.4 : 1 }}
         className={styles.tableSubContainer}

@@ -16,7 +16,18 @@
   user-select: none;
 }
 
-.primary {
+.primaryLight {
+  @include chip-general-styles;
+  background-color: $primary-light-3;
+  color: $primary-text;
+
+  .text {
+    @include text-general-styles;
+    color: $primary-text;
+  }
+}
+
+.primaryDark {
   @include chip-general-styles;
   background-color: $primary-light-2;
   color: $primary;
@@ -27,7 +38,18 @@
   }
 }
 
-.green {
+.greenLight {
+  @include chip-general-styles;
+  background-color: $green-light-2;
+  color: $green-2;
+
+  .text {
+    @include text-general-styles;
+    color: $green-2;
+  }
+}
+
+.greenDark {
   @include chip-general-styles;
   background-color: $green-light;
   color: $green;
@@ -38,7 +60,18 @@
   }
 }
 
-.blue {
+.blueLight {
+  @include chip-general-styles;
+  background-color: $blue-light-2;
+  color: $blue-2;
+
+  .text {
+    @include text-general-styles;
+    color: $blue-2;
+  }
+}
+
+.blueDark {
   @include chip-general-styles;
   background-color: $blue-light;
   color: $blue;
@@ -49,7 +82,18 @@
   }
 }
 
-.pink {
+.pinkLight {
+  @include chip-general-styles;
+  background-color: $pink-light-2;
+  color: $pink-2;
+
+  .text {
+    @include text-general-styles;
+    color: $pink-2;
+  }
+}
+
+.pinkDark {
   @include chip-general-styles;
   background-color: $pink-light;
   color: $pink;
@@ -60,7 +104,18 @@
   }
 }
 
-.yellow {
+.yellowLight {
+  @include chip-general-styles;
+  background-color: $yellow-light-2;
+  color: $yellow-2;
+
+  .text {
+    @include text-general-styles;
+    color: $yellow-2;
+  }
+}
+
+.yellowDark {
   @include chip-general-styles;
   background-color: $yellow-light;
   color: $yellow;
@@ -71,7 +126,18 @@
   }
 }
 
-.purple {
+.purpleLight {
+  @include chip-general-styles;
+  background-color: $purple-light-2;
+  color: $purple-2;
+
+  .text {
+    @include text-general-styles;
+    color: $purple-2;
+  }
+}
+
+.purpleDark {
   @include chip-general-styles;
   background-color: $purple-light;
   color: $purple;

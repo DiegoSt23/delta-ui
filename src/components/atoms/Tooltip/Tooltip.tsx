@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { Typography } from '../Typography';
 import styles from './tooltip.module.scss';
 
@@ -22,20 +23,26 @@ export const Tooltip = ({
   position,
   maxWidth,
   className,
-}: TooltipProps) => (
-  <div className={styles.mainContainer}>
-    {children}
-    <div
-      className={[styles[position || 'top'], className].join(' ')}
-      style={{ maxWidth }}
-    >
-      {typeof tooltipContent === 'string' ? (
-        <Typography type='paragraph2' className={styles.text}>{tooltipContent}</Typography>
-      ) : (
-        tooltipContent
-      )}
+}: TooltipProps) => {
+  const theme = useTheme();
+
+  return (
+    <div className={styles.mainContainer}>
+      {children}
+      <div
+        className={[styles[`${position}${theme}` || 'topDark'], className].join(' ')}
+        style={{ maxWidth }}
+      >
+        {typeof tooltipContent === 'string' ? (
+          <Typography type='paragraph2' className={styles.text}>
+            {tooltipContent}
+          </Typography>
+        ) : (
+          tooltipContent
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Tooltip.defaultProps = defaultProps;

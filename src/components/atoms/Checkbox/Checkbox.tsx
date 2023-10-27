@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { Check } from '../../../assets/icons';
 import { Typography } from '../Typography';
 import styles from './checkbox.module.scss';
@@ -44,6 +45,7 @@ export const Checkbox = ({
   checkedIcon,
   checkedColor,
 }: CheckboxProps) => {
+  const theme = useTheme();
   const [isChecked, setIsChecked] = useState<boolean>(
     isDefaultChecked || false
   );
@@ -61,7 +63,11 @@ export const Checkbox = ({
         className={[styles.checkboxButton, buttonClassName].join(' ')}
         style={{
           backgroundColor: isChecked ? checkedColor : 'transparent',
-          borderColor: isChecked ? checkedColor : '#888888',
+          borderColor: isChecked
+            ? checkedColor
+            : theme === 'Light'
+            ? '#d9d9d9'
+            : '#888888',
           width: buttonSizes[size || 'md'],
           height: buttonSizes[size || 'md'],
         }}

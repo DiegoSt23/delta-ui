@@ -8,6 +8,24 @@
   margin-left: 13px;
 }
 
+@mixin text-area-style {
+  width: 100%;
+  background-color: transparent;
+  border: solid 1px $gray-border;
+  outline: none;
+  font-size: medium;
+  font-family: $red-hat;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 12px;
+
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
 .mainContainer {
 
   .label {
@@ -15,23 +33,14 @@
     margin-bottom: 5px;
   }
 
-  .textArea {
-    width: 100%;
-    background-color: transparent;
-    border: solid 1px $gray-border;
-    outline: none;
-    color: $white;
-    font-size: medium;
-    font-family: $red-hat;
-    font-weight: 500;
-    border-radius: 12px;
-    padding: 12px;
+  .textAreaLight {
+    @include text-area-style;
+    color: $gray-2;
+  }
 
-    &:disabled {
-      filter: saturate(0.5);
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+  .textAreaDark {
+    @include text-area-style;
+    color: $white;
   }
 
   .helperText {

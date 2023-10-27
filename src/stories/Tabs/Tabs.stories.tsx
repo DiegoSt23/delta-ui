@@ -13,7 +13,6 @@ const Template: StoryFn<TabsProps> = (args) => (
     style={{
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >
@@ -262,7 +261,7 @@ const itemsOverflow = [
 
 const iconItems = [
   {
-    title: <AiFillAndroid size={20} color='#d9d9d9' />,
+    title: <AiFillAndroid size={20} />,
     children: (
       <>
         <Typography type='subtitle'>Tab ONE content.</Typography>
@@ -282,7 +281,7 @@ const iconItems = [
     key: 'tab1',
   },
   {
-    title: <AiFillApple size={20} color='#d9d9d9' />,
+    title: <AiFillApple size={20} />,
     children: (
       <>
         <Typography type='subtitle'>Tab TWO content.</Typography>

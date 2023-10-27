@@ -1,15 +1,13 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
-.mainContainer {
+@mixin main-container-styles {
   width: 50px;
   height: 100%;
   display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: -webkit-linear-gradient(-45deg,#3b3b3b64,#1111115d);
-  border-right: solid 1px $gray-border;
   padding: 20px 0px;
   position: relative;
 
@@ -40,4 +38,18 @@
       gap: 10px;
     }
   }
+}
+
+.mainContainerLight {
+  @include main-container-styles;
+  background: -webkit-linear-gradient(-45deg,#fff,#c4c4c468);
+  border-right: solid 1px #fff;
+  box-shadow: 0px 0px 10px $shadow;
+}
+
+.mainContainerDark {
+  @include main-container-styles;
+  background: -webkit-linear-gradient(-45deg,#3b3b3b64,#1111115d);
+  border-right: solid 1px $gray-border;
+  box-shadow: 0px 0px 10px $shadow-2;
 }

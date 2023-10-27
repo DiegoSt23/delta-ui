@@ -5,19 +5,13 @@
   width: 100%;
 }
 
-.collapsibleMainContainer {
+@mixin collapsible-general-styles {
   @include full-width;
   height: fit-content;
   border-left: solid 4px #87878738;
   border-radius: 10px;
-  background: -webkit-linear-gradient(-45deg,#3b3b3b68,#3b3b3b39);
   backdrop-filter: blur(10px);
   transition: all ease 0.3s;
-
-  &:hover {
-    background: -webkit-linear-gradient(-45deg,#3b3b3b7e,#3b3b3b4d);
-    transition: all ease 0.3s;
-  }
 
   .headerButton {
     @include full-width;
@@ -29,10 +23,6 @@
     border: none;
     cursor: pointer;
     border-radius: 10px;
-
-    .title {
-      color: $white-2;
-    }
 
     .openButton {
       transition: all ease 0.3s;
@@ -48,5 +38,25 @@
       @include full-width;
       padding: 10px 20px 20px 40px;
     }
+  }
+}
+
+.collapsibleMainContainerLight {
+  @include collapsible-general-styles;
+  background: -webkit-linear-gradient(-45deg,#c4c4c468,#c4c4c439);
+
+  &:hover {
+    background: -webkit-linear-gradient(-45deg,#ababab68,#ababab39);
+    transition: all ease 0.3s;
+  }
+}
+
+.collapsibleMainContainerDark {
+  @include collapsible-general-styles;
+  background: -webkit-linear-gradient(-45deg,#3b3b3b68,#3b3b3b39);
+
+  &:hover {
+    background: -webkit-linear-gradient(-45deg,#3b3b3b7e,#3b3b3b4d);
+    transition: all ease 0.3s;
   }
 }

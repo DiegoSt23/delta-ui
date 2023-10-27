@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
-import { Button, Modal, ModalProps, Typography , Menu} from '../../components';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { Button, Modal, ModalProps, Typography } from '../../components';
 
 export default {
   title: 'DeltaUI/Modal',
@@ -18,7 +19,6 @@ const Template: StoryFn<ModalProps> = (args) => {
       style={{
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#000000',
         padding: 20,
       }}
     >
@@ -32,8 +32,8 @@ export const Small = Template.bind({});
 export const Mid = Template.bind({});
 export const Large = Template.bind({});
 export const ExtraLarge = Template.bind({});
+export const CustomCloseButton = Template.bind({});
 export const WithHeader = Template.bind({});
-export const WithHeaderElement = Template.bind({});
 export const WithFooter = Template.bind({});
 export const Complete = Template.bind({});
 
@@ -71,34 +71,16 @@ ExtraLarge.args = {
   size: 'xl',
 };
 
-WithHeader.args = {
+CustomCloseButton.args = {
   children: content,
-  headerTitle: 'Modal Title',
+  customCloseIcon: (
+    <IoIosCloseCircleOutline size={25} color="gray" />
+  )
 };
 
-WithHeaderElement.args = {
+WithHeader.args = {
   children: content,
-  headerTitle: 'Modal Title',
-  headerElement: (
-    <Menu
-      position='left'
-      width={90}
-      items={[
-        {
-          title: 'Option 1',
-          onClick: () => console.log('Option 1 triggered'),
-        },
-        {
-          title: 'Option 2',
-          onClick: () => console.log('Option 1 triggered'),
-        },
-        {
-          title: 'Option 3',
-          onClick: () => console.log('Option 1 triggered'),
-        },
-      ]}
-    />
-  ),
+  headerTitle: 'Modal Title'
 };
 
 WithFooter.args = {
@@ -115,27 +97,7 @@ WithFooter.args = {
 
 Complete.args = {
   children: content,
-  headerTitle: 'Card Title',
-  headerElement: (
-    <Menu
-      position='left'
-      width={90}
-      items={[
-        {
-          title: 'Option 1',
-          onClick: () => console.log('Option 1 triggered'),
-        },
-        {
-          title: 'Option 2',
-          onClick: () => console.log('Option 1 triggered'),
-        },
-        {
-          title: 'Option 3',
-          onClick: () => console.log('Option 1 triggered'),
-        },
-      ]}
-    />
-  ),
+  headerTitle: 'Modal Title',
   footer: (
     <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
       <Button small>Cancel</Button>

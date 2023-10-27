@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
-import { AiFillAndroid } from 'react-icons/ai';
+import { RiExternalLinkLine } from 'react-icons/ri';
 import { Link, LinkProps } from '../../components';
 
 export default {
@@ -13,7 +13,6 @@ const Template: StoryFn<LinkProps> = (args) => (
     style={{
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >
@@ -41,7 +40,7 @@ Underline.args = {
 };
 
 Icon.args = {
-  children: <AiFillAndroid />,
+  children: <RiExternalLinkLine size={20} />,
   href: 'https://github.com/DiegoSt23/delta-ui',
   textDecoration: 'underline',
   target: '_blank',

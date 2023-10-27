@@ -1,7 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import { Button, ButtonProps } from '../../components';
-import { ImSearch } from 'react-icons/im';
-import { AiFillApple } from 'react-icons/ai';
+import { AiFillApple, AiOutlineSearch } from 'react-icons/ai';
 
 export default {
   title: 'DeltaUI/Button',
@@ -17,7 +16,6 @@ const Template: StoryFn<ButtonProps> = (args) => {
       style={{
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#000000',
         padding: 20,
       }}
     >
@@ -26,7 +24,7 @@ const Template: StoryFn<ButtonProps> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
+export const Hollow = Template.bind({});
 export const IconPrefix = Template.bind({});
 export const IconSuffix = Template.bind({});
 export const Icon = Template.bind({});
@@ -36,7 +34,7 @@ export const Filled = Template.bind({});
 export const Small = Template.bind({});
 export const Disabled = Template.bind({});
 
-Default.args = {
+Hollow.args = {
   children: 'Click',
 };
 
@@ -72,7 +70,7 @@ IconSuffix.args = {
 };
 
 Icon.args = {
-  children: <ImSearch size={20} />,
+  children: <AiOutlineSearch size={20} />,
 };
 
 Disabled.args = {

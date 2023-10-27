@@ -1,13 +1,12 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
-.hollow {
+@mixin hollow-styles {
   background-color: transparent;
   border: solid 1px $gray-border;
   border-radius: 10px;
   transition: all ease 0.3s;
   cursor: pointer;
-  color: $primary;
   font-family: $red-hat;
   font-size: 1em;
   font-weight: 700;
@@ -21,24 +20,9 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
-
-  &:not(:disabled):hover {
-    box-shadow: 0px 0px 15px $primary;
-    border: solid 1px $primary;
-    background-color: $primary;
-    color: $black;
-    transition: all ease 0.3s;
-  }
-
-  &:not(:disabled):active {
-    opacity: 0.8;
-    box-shadow: 0px 0px 5px $primary;
-    border: solid 1px $primary;
-    transition: all ease 0.2s;
-  }
 }
 
-.filled {
+@mixin filled-styles {
   background-color: $white-2;
   border: solid 1px $white-2;
   border-radius: 10px;
@@ -58,6 +42,78 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
+}
+
+@mixin text-styles {
+  background-color: transparent;
+  border: none;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  font-family: $red-hat;
+  font-size: 1em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):active {
+    opacity: 0.4;
+    transition: all ease 0.2s;
+  }
+}
+
+.hollowDark {
+  @include hollow-styles;
+  color: $primary;
+
+  &:not(:disabled):hover {
+    box-shadow: 0px 0px 15px $primary;
+    border: solid 1px $primary;
+    background-color: $primary;
+    color: $black;
+    transition: all ease 0.3s;
+  }
+
+  &:not(:disabled):active {
+    opacity: 0.8;
+    box-shadow: 0px 0px 5px $primary;
+    border: solid 1px $primary;
+    transition: all ease 0.2s;
+  }
+}
+
+.hollowLight {
+  @include hollow-styles;
+  color: $primary-2;
+
+  &:not(:disabled):hover {
+    box-shadow: 0px 0px 10px $primary-2-light;
+    border: solid 1px $primary-2;
+    background-color: $primary-2;
+    color: $white;
+    transition: all ease 0.3s;
+  }
+
+  &:not(:disabled):active {
+    box-shadow: 0px 0px 3px $primary-2-light;
+    border: solid 1px $primary-2-light;
+    background-color: $primary-2-light;
+    transition: all ease 0.2s;
+  }
+}
+
+.filledDark {
+  @include hollow-styles;
+  background-color: $white-2;
+  border: solid 1px $white-2;
+  color: $black;
 
   &:not(:disabled):hover {
     box-shadow: 0px 0px 15px $white;
@@ -73,33 +129,32 @@
   }
 }
 
-.text {
-  background-color: transparent;
-  border: none;
-  transition: all ease 0.3s;
-  cursor: pointer;
-  color: $primary;
-  font-family: $red-hat;
-  font-size: 1em;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  &:disabled {
-    filter: saturate(0.5);
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+.filledLight {
+  @include hollow-styles;
+  background-color: $white-2;
+  border: solid 1px $white-2;
+  color: $black;
 
   &:not(:disabled):hover {
-    text-shadow: 0px 0px 15px $primary-light;
+    box-shadow: 0px 0px 15px $shadow;
+    border: solid 1px transparent;
+    background-color: $white;
     transition: all ease 0.3s;
   }
 
   &:not(:disabled):active {
-    opacity: 0.4;
+    opacity: 0.6;
+    box-shadow: 0px 0px 3px $shadow;
     transition: all ease 0.2s;
   }
+}
+
+.textDark {
+  @include text-styles;
+  color: $primary;
+}
+
+.textLight {
+  @include text-styles;
+  color: $primary-2;
 }

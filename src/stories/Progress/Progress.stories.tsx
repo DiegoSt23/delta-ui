@@ -15,7 +15,6 @@ const Template: StoryFn<ProgressProps> = (args) => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >
@@ -54,7 +53,7 @@ CustomColor.args = {
   total: 100,
   progress: 45,
   thickness: 'normal',
-  progressColor: '#eeca2a',
+  progressColor: '#5650ff',
 };
 
 Tooltip.args = {

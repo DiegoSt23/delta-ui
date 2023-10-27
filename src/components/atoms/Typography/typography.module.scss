@@ -4,12 +4,23 @@
 @mixin heading-styles {
   font-family: $red-hat;
   font-weight: 700;
+  user-select: none;
+}
+
+@mixin heading-light {
+  background: -webkit-linear-gradient(180deg,#949494,#555555);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@mixin heading-dark {
   background: -webkit-linear-gradient(180deg,#fff,#adadad);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-user-select: none;
   -ms-user-select: none;
-  user-select: none;
 }
 
 @mixin paragraph-styles {
@@ -22,27 +33,76 @@
   }
 }
 
-.heading1 {
+.heading1Light {
   @include heading-styles;
+  @include heading-light;
   font-size: 4em;
 }
 
-.heading2 {
+.heading1Dark {
   @include heading-styles;
+  @include heading-dark;
+  font-size: 4em;
+}
+
+.heading2Light {
+  @include heading-styles;
+  @include heading-light;
   font-size: 3em;
 }
 
-.heading3 {
+.heading2Dark {
   @include heading-styles;
+  @include heading-dark;
+  font-size: 3em;
+}
+
+.heading3Light {
+  @include heading-styles;
+  @include heading-light;
   font-size: xx-large;
 }
 
-.heading4 {
+.heading3Dark {
   @include heading-styles;
+  @include heading-dark;
+  font-size: xx-large;
+}
+
+.heading4Light {
+  @include heading-styles;
+  @include heading-light;
   font-size: x-large;
 }
 
-.subtitle {
+.heading4Dark {
+  @include heading-styles;
+  @include heading-dark;
+  font-size: x-large;
+}
+
+.heading5Light {
+  @include heading-styles;
+  @include heading-light;
+  font-size: large;
+}
+
+.heading5Dark {
+  @include heading-styles;
+  @include heading-dark;
+  font-size: large;
+}
+
+.subtitleLight {
+  @include paragraph-styles;
+  color: rgb(94, 94, 94);
+  font-weight: 500;
+  font-size: large;
+  letter-spacing: 0.5px;
+  line-height: 1.5rem;
+}
+
+.subtitleDark {
   @include paragraph-styles;
   color: $white-2;
   font-size: large;
@@ -50,21 +110,42 @@
   line-height: 1.5rem;
 }
 
-.paragraph {
+.paragraphLight {
   @include paragraph-styles;
   font-size: medium;
   letter-spacing: 0.5px;
   line-height: 1.5rem;
 }
 
-.paragraph2 {
+.paragraphDark {
+  @include paragraph-styles;
+  font-size: medium;
+  letter-spacing: 0.5px;
+  line-height: 1.5rem;
+}
+
+.paragraph2Light {
   @include paragraph-styles;
   font-size: small;
   letter-spacing: 0.5px;
   line-height: 1.2rem;
 }
 
-.paragraph3 {
+.paragraph2Dark {
+  @include paragraph-styles;
+  font-size: small;
+  letter-spacing: 0.5px;
+  line-height: 1.2rem;
+}
+
+.paragraph3Light {
+  @include paragraph-styles;
+  font-size: x-small;
+  letter-spacing: 0.5px;
+  line-height: 1rem;
+}
+
+.paragraph3Dark {
   @include paragraph-styles;
   font-size: x-small;
   letter-spacing: 0.5px;

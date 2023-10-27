@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
+import { Typography } from '..';
 import styles from './list-item.module.scss';
 
 export interface MenuItemProps {
@@ -25,6 +27,8 @@ export const MenuItem = ({
   underline,
   className,
 }: MenuItemProps) => {
+  const theme = useTheme();
+
   return (
     <div
       className={styles.mainContainer}
@@ -35,16 +39,18 @@ export const MenuItem = ({
       }}
     >
       <button
-        className={[styles.button, className].join(' ')}
+        className={[styles[`button${theme}`], className].join(' ')}
         onClick={onClick}
       >
         <div className={styles.titleContainer}>
           {icon || null}
-          <p className={styles.title}>{title}</p>
+          <Typography type="paragraph2" className={styles.title}>{title}</Typography>
         </div>
         {description && (
           <div className={styles.descriptionContainer}>
-            <p className={styles.description}>{description}</p>
+            <Typography type='paragraph3' className={styles.description}>
+              {description}
+            </Typography>
           </div>
         )}
       </button>

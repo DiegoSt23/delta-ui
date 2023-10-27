@@ -14,6 +14,7 @@
   transition: all ease 0.4s;
   overflow: hidden;
   border-radius: 10px;
+  color: $gray;
 
   &:disabled {
     filter: saturate(0.5);
@@ -22,48 +23,70 @@
   }
 }
 
+@mixin tabs-container-styles {
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+  overflow-x: auto;
+  display: flex;
+
+  &::-webkit-scrollbar {
+    background-color: 'transparent';
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  .tab {
+    @include tab-styles;
+    
+    .title {
+      transition: all ease 0.3s;
+    }
+  }
+}
+
 .tabsMainContainer {
   @include full-width;
   display: flex;
   flex-direction: column;
   
-  .tabsContainer {
-    max-width: 100%;
-    background-color: #3b3b3b80;
-    border-radius: 10px;
-    padding: 5px;
-    overflow-x: auto;
-    display: flex;
-
-    &::-webkit-scrollbar {
-      background-color: 'transparent';
-      width: 5px;
-      height: 5px;
-    }
+  .tabsContainerLight {
+    @include tabs-container-styles;
+    background-color: $white-2;
 
     &::-webkit-scrollbar-thumb {
-      background-color: #3c3c3c;
+      background-color: #b0b0b0;
       border-radius: 8px;
       background-clip: padding-box;
-      border: 4px solid #3c3c3c;
-    }
-
-    &::-webkit-scrollbar-corner {
-      background: transparent;
-    }
-
-    .tab {
-      @include tab-styles;
-      
-      .title {
-        transition: all ease 0.3s;
-      }
+      border: 4px solid #b0b0b0;
     }
 
     .activeTab {
       @include tab-styles; 
+      background-color: #7b7b7b7e;
+      box-shadow: 0px 0px 5px $shadow;
+      color: #fff;
+
+      .title {
+        transition: all ease 0.3s;
+        color: #fff;
+      }
+    }
+  }
+
+  .tabsContainerDark {
+    @include tabs-container-styles;
+    background-color: #3b3b3b80;
+
+    .activeTab {
+      @include tab-styles; 
       background-color: #3b3b3b7e;
-      box-shadow: 0px 5px 5px 5px #0000001b;
+      box-shadow: 0px 0px 10px $shadow-2;
+      color: #fff;
 
       .title {
         transition: all ease 0.3s;

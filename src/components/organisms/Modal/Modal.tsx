@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
+import { useTheme } from '../../../context';
+import { Close } from '../../../assets/icons';
 import { Card, CardProps } from '../../molecules';
 import styles from './modal.module.scss';
 
@@ -6,13 +8,14 @@ export interface ModalProps extends CardProps {
   isOpen: boolean;
   onClose: () => void;
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'auto';
+  customCloseIcon?: ReactNode;
 }
 
 const defaultProps: Partial<ModalProps> = {
   size: 'md',
   headerTitle: undefined,
-  headerElement: undefined,
   footer: undefined,
+  customCloseIcon: undefined,
 };
 
 export const Modal = ({
@@ -20,13 +23,14 @@ export const Modal = ({
   onClose,
   children,
   headerTitle,
-  headerElement,
   footer,
   mainContainerClassName,
   headerClassName,
   footerClassName,
   size,
+  customCloseIcon,
 }: ModalProps) => {
+  const theme = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>('none');
   const [top, setTop] = useState<number | undefined>(-100);
@@ -57,12 +61,15 @@ export const Modal = ({
       {isOpenLocal && (
         <div
           className={styles.backdrop}
-          style={{ opacity }}
+          style={{
+            opacity,
+            background: theme === 'Dark' ? '#000000ca' : '#ffffffc9',
+          }}
           onClick={onClose}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={styles[size || 'md']}
+            className={styles[`${size}${theme}` || 'mdDark']}
             style={{
               display,
               top: `${top}vh`,
@@ -70,9 +77,18 @@ export const Modal = ({
           >
             <Card
               headerTitle={headerTitle}
-              headerElement={headerElement}
+              headerElement={
+                <button className={styles.closeButton} onClick={onClose}>
+                  {customCloseIcon || (
+                    <Close width={20} height={20} fill='gray' />
+                  )}
+                </button>
+              }
               footer={footer}
-              mainContainerClassName={mainContainerClassName}
+              mainContainerClassName={[
+                styles.modalCardStyles,
+                mainContainerClassName,
+              ].join(' ')}
               headerClassName={headerClassName}
               footerClassName={footerClassName}
               fullWidth

@@ -1,6 +1,9 @@
 import { StoryFn, Meta } from '@storybook/react';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { Table, TableProps, Card } from '../../components';
+import { IoTrashOutline } from 'react-icons/io5';
+import { IoMdCheckmark } from 'react-icons/io';
+// import { IoMdCheckmark } from 'react-icons/bi';
+import { Table, TableProps, Card, Button } from '../../components';
 
 export default {
   title: 'DeltaUI/Table',
@@ -14,7 +17,6 @@ const Template: StoryFn<TableProps> = (args) => (
       width: '100%',
       minHeight: '100vh',
       overflowY: 'auto',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >
@@ -32,6 +34,7 @@ export const LabelOptions = Template.bind({});
 export const LabelOptionsCustomIcon = Template.bind({});
 export const CheckboxSelection = Template.bind({});
 export const Loading = Template.bind({});
+export const CustomItem = Template.bind({});
 
 const labels = [
   {
@@ -48,6 +51,29 @@ const labels = [
   },
   {
     content: 'Status',
+  },
+];
+
+const labels2 = [
+  {
+    content: 'First Name',
+    numberOfColumns: 4,
+  },
+  {
+    content: 'Last Name',
+    numberOfColumns: 4,
+  },
+  {
+    content: 'Email',
+    numberOfColumns: 4,
+  },
+  {
+    content: 'Status',
+    numberOfColumns: 3,
+  },
+  {
+    content: 'Actions',
+    numberOfColumns: 2,
   },
 ];
 
@@ -113,7 +139,7 @@ const labelsWithOptionsCustomIcon = [
   {
     content: 'First Name',
     numberOfColumns: 3,
-    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    optionsMenuIcon: <RiArrowDropDownLine color='gray' size={20} />,
     options: [
       {
         item: 'Option1',
@@ -128,7 +154,7 @@ const labelsWithOptionsCustomIcon = [
   {
     content: 'Last Name',
     numberOfColumns: 3,
-    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    optionsMenuIcon: <RiArrowDropDownLine color='gray' size={20} />,
     options: [
       {
         item: 'Option1',
@@ -143,7 +169,7 @@ const labelsWithOptionsCustomIcon = [
   {
     content: 'Email',
     numberOfColumns: 3,
-    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    optionsMenuIcon: <RiArrowDropDownLine color='gray' size={20} />,
     options: [
       {
         item: 'Option1',
@@ -157,7 +183,7 @@ const labelsWithOptionsCustomIcon = [
   },
   {
     content: 'Status',
-    optionsMenuIcon: <RiArrowDropDownLine color='#eeeeee' size={20} />,
+    optionsMenuIcon: <RiArrowDropDownLine color='gray' size={20} />,
     options: [
       {
         item: 'Option1',
@@ -223,6 +249,163 @@ const items = [
   },
 ];
 
+const itemsWithCustomElement = [
+  {
+    firstName: 'Eren',
+    lastName: 'Jaeger',
+    email: 'eren@mail.com',
+    status: 'Active',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@eren',
+  },
+  {
+    firstName: 'Levi',
+    lastName: 'Ackerman',
+    email: 'levi@mail.com',
+    status: 'Active',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@levi',
+  },
+  {
+    firstName: 'Erwin',
+    lastName: 'Smith',
+    email: 'erwin@mail.com',
+    status: 'Inactive',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@erwin',
+  },
+  {
+    firstName: 'Mikasa',
+    lastName: 'Ackerman',
+    email: 'mikasa@mail.com',
+    status: 'Active',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@mikasa',
+  },
+  {
+    firstName: 'Annie',
+    lastName: 'Leonhart',
+    email: 'annie@mail.com',
+    status: 'Active',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@annie',
+  },
+  {
+    firstName: 'Hange',
+    lastName: 'Zoe',
+    email: 'hange@mail.com',
+    status: 'Inactive',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@hange',
+  },
+  {
+    firstName: 'Reiner',
+    lastName: 'Braun',
+    email: 'reiner@mail.com',
+    status: 'Active',
+    actions: (
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+        }}
+      >
+        <Button small>
+          <IoTrashOutline size={20} />
+        </Button>
+        <Button small>
+          <IoMdCheckmark size={20} />
+        </Button>
+      </div>
+    ),
+    id: '@reiner',
+  },
+];
+
 Default.args = {
   labels,
   items,
@@ -271,4 +454,13 @@ Loading.args = {
   items,
   justifyContent: 'flex-start',
   loading: true,
+};
+
+CustomItem.args = {
+  minWidth: 1000,
+  labels: labels2,
+  items: itemsWithCustomElement,
+  justifyContent: 'flex-start',
+  underline: true,
+  onRowsSelection: (values) => console.log(values),
 };

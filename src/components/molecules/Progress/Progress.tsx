@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTheme } from '../../../context';
 import { Tooltip } from '../../atoms';
 import styles from './progress.module.scss';
 
@@ -29,6 +30,7 @@ export const Progress = ({
   containerClassName,
   progressBarClassName,
 }: ProgressProps) => {
+  const theme = useTheme();
   const [percent, setPercent] = useState<number>(0);
 
   const handleCalculatePercent = (partialValue: number, totalValue: number) => {
@@ -56,7 +58,8 @@ export const Progress = ({
             className={[styles.progressBar, progressBarClassName].join(' ')}
             style={{
               width: `${percent}%`,
-              backgroundColor: progressColor,
+              backgroundColor:
+                progressColor || (theme === 'Dark' ? '#d9d9d9' : '#777777'),
             }}
           />
         </Tooltip>
@@ -65,7 +68,8 @@ export const Progress = ({
           className={[styles.progressBar, progressBarClassName].join(' ')}
           style={{
             width: `${percent}%`,
-            backgroundColor: progressColor,
+            backgroundColor:
+              progressColor || (theme === 'Dark' ? '#d9d9d9' : '#777777'),
           }}
         />
       )}

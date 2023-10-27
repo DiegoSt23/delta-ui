@@ -1,4 +1,5 @@
 import { useState, ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { Typography } from '../../atoms';
 import styles from './tabs.module.scss';
 
@@ -41,6 +42,7 @@ export const Tabs = ({
   activeTabContainerClassName,
   contentContainerClassName,
 }: TabsProps) => {
+  const theme = useTheme();
   const [activeKey, setActiveKey] = useState<string | number>(
     defaultActiveTabKey || items[0].key
   );
@@ -54,7 +56,7 @@ export const Tabs = ({
       className={[styles.tabsMainContainer, mainContainerClassName].join(' ')}
     >
       <div
-        className={[styles.tabsContainer, tabsContainerClassName].join(' ')}
+        className={[styles[`tabsContainer${theme}`], tabsContainerClassName].join(' ')}
         style={{
           width: ['default', 'center', 'right'].includes(tabPosition)
             ? 'fit-content'

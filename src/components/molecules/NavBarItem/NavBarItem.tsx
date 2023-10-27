@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'; 
+import { useTheme } from '../../../context';
 import { Tooltip } from '../../atoms';
 import styles from './nav-bar-item.module.scss';
 
@@ -33,23 +34,27 @@ export const NavBarItem = ({
   className,
   activeClassName,
   render,
-}: NavBarItemProps) => (
-  <Tooltip tooltipContent={name} position='right'>
-    {render ? (
-      render({ icon, isActive })
-    ) : (
-      <button
-        className={`${
-          isActive
-            ? activeClassName || styles.buttonActive
-            : className || styles.button
-        }`}
-        onClick={onClick}
-      >
-        {icon}
-      </button>
-    )}
-  </Tooltip>
-);
+}: NavBarItemProps) => {
+  const theme = useTheme();
+
+  return (
+    <Tooltip tooltipContent={name} position='right'>
+      {render ? (
+        render({ icon, isActive })
+      ) : (
+        <button
+          className={`${
+            isActive
+              ? activeClassName || styles[`buttonActive${theme}`]
+              : className || styles[`button${theme}`]
+          }`}
+          onClick={onClick}
+        >
+          {icon}
+        </button>
+      )}
+    </Tooltip>
+  );
+};
 
 NavBarItem.defaultProps = defaultProps;

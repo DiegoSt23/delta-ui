@@ -3,7 +3,6 @@
 
 @mixin drawer-styles {
   position: absolute;
-  background: -webkit-linear-gradient(-45deg,#1e1e1e,#0a0a0a);
   transition: all ease 0.5s;
   padding: 20px;
   overflow-y: auto;
@@ -37,13 +36,22 @@
   height: 100%;
 }
 
+@mixin light-styles {
+  background: -webkit-linear-gradient(-45deg,#fff,#c4c4c468);
+  box-shadow: 0px 0px 10px $shadow;
+}
+
+@mixin dark-styles {
+  background: -webkit-linear-gradient(-45deg,#1e1e1e,#0a0a0a);
+  box-shadow: 0px 0px 10px $shadow-2;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: #000000ca;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,27 +59,59 @@
   transition: all ease 0.3s;
   z-index: 99;
 
-  .left {
+  .leftLight {
     @include drawer-styles;
     @include vertical-styles;
+    @include light-styles;
+    border-right: solid 1px #fff;
+  }
+
+  .leftDark {
+    @include drawer-styles;
+    @include vertical-styles;
+    @include dark-styles;
     border-right: solid 1px $gray-border;
   }
 
-  .right {
+  .rightLight {
     @include drawer-styles;
     @include vertical-styles;
+    @include light-styles;
+    border-left: solid 1px #fff;
+  }
+
+  .rightDark {
+    @include drawer-styles;
+    @include vertical-styles;
+    @include dark-styles;
     border-left: solid 1px $gray-border;
   }
 
-  .top {
+  .topLight {
     @include drawer-styles;
     @include horizontal-styles;
+    @include light-styles;
+    border-bottom: solid 1px #fff;
+  }
+
+  .topDark {
+    @include drawer-styles;
+    @include horizontal-styles;
+    @include dark-styles;
     border-bottom: solid 1px $gray-border;
   }
 
-  .bottom {
+  .bottomLight {
     @include drawer-styles;
     @include horizontal-styles;
+    @include light-styles;
+    border-top: solid 1px #fff;
+  }
+
+  .bottomDark {
+    @include drawer-styles;
+    @include horizontal-styles;
+    @include dark-styles;
     border-top: solid 1px $gray-border;
   }
 }
