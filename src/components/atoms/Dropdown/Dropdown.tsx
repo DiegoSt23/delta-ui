@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import { useTheme } from '../../../context';
 import { ArrowDown } from '../../../assets/icons';
 import styles from './dropdown.module.scss';
 
@@ -44,6 +45,7 @@ export const Dropdown = ({
   optionsContainerClassName,
   optionClassName,
 }: DropdownProps) => {
+  const theme = useTheme();
   const [displayDropdown, setDisplayDropdown] = useState<boolean>(false);
   const [applyChanges, setApplyChanges] = useState<boolean>(false);
   const [opacity, setOpacity] = useState<number>(0);
@@ -89,7 +91,7 @@ export const Dropdown = ({
     <div className={styles.mainContainer}>
       {label && <p className={styles.label}>{label}</p>}
       <button
-        className={[styles.button, mainContainerClassName].join(' ')}
+        className={[styles[`button${theme}`], mainContainerClassName].join(' ')}
         style={{
           borderColor: error ? '#ff1b63' : '#80808044',
           borderRadius: applyChanges ? ' 10px 10px 0px 0px' : 10,
@@ -121,12 +123,15 @@ export const Dropdown = ({
             setSelectedOptionValue(+e.target.value);
             handleDisplayDropdown();
           }}
-          className={[styles.optionsContainer, optionsContainerClassName].join(
-            ' '
-          )}
+          className={[
+            styles[`optionsContainer${theme}`],
+            optionsContainerClassName,
+          ].join(' ')}
           style={{
             opacity,
-            transform: `translateY(${helperText ? translateY - 22 : translateY}px)`,
+            transform: `translateY(${
+              helperText ? translateY - 22 : translateY
+            }px)`,
           }}
           disabled={disabled}
         >

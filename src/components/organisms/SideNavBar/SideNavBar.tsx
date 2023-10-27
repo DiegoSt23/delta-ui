@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { NavBarItem, NavBarItemProps } from '../../molecules';
 import styles from './side-nav-bar.module.scss';
 
@@ -28,32 +29,29 @@ export const SideNavBar = ({
   mainContainerClassName,
   itemClassName,
   activeItemClassName,
-}: SideNavBarProps) => (
-  <div className={[styles.mainContainer, mainContainerClassName].join(' ')}>
-    {mainIcon && (
-      <button
-        className={styles.mainIcon}
-        onClick={onClickMainIcon || undefined}
-      >
-        {mainIcon}
-      </button>
-    )}
-    <div className={styles.itemsContainer} style={{ paddingTop: mainIcon ?  70 : 0 }}>
+}: SideNavBarProps) => {
+  const theme = useTheme();
+
+  return (
+    <div
+      className={[styles[`mainContainer${theme}`], mainContainerClassName].join(
+        ' '
+      )}
+    >
+      {mainIcon && (
+        <button
+          className={styles.mainIcon}
+          onClick={onClickMainIcon || undefined}
+        >
+          {mainIcon}
+        </button>
+      )}
       <div
-        className={styles.itemsSubContainer}
+        className={styles.itemsContainer}
+        style={{ paddingTop: mainIcon ? 70 : 0 }}
       >
-        {items?.map((item) => (
-          <NavBarItem
-            key={item.name}
-            {...item}
-            className={itemClassName}
-            activeClassName={activeItemClassName}
-          />
-        ))}
-      </div>
-      {bottomItems?.length && (
         <div className={styles.itemsSubContainer}>
-          {bottomItems?.map((item) => (
+          {items?.map((item) => (
             <NavBarItem
               key={item.name}
               {...item}
@@ -62,9 +60,21 @@ export const SideNavBar = ({
             />
           ))}
         </div>
-      )}
+        {bottomItems?.length ? (
+          <div className={styles.itemsSubContainer}>
+            {bottomItems?.map((item) => (
+              <NavBarItem
+                key={item.name}
+                {...item}
+                className={itemClassName}
+                activeClassName={activeItemClassName}
+              />
+            ))}
+          </div>
+        ) : null}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 SideNavBar.defaultProps = defaultProps;

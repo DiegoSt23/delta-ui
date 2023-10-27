@@ -14,14 +14,14 @@
   cursor: pointer;
 }
 
-.button {
+.buttonLight {
   @include button-style;
-  color: $white-2;
+  color: $gray;
 
   &:hover {
     transition: all ease 0.2s;
-    color: #fff;
-    background-color: $gray-3;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px $shadow;
   }
 
   &:active {
@@ -30,16 +30,40 @@
   }
 }
 
-.buttonActive {
+.buttonDark {
   @include button-style;
-  color: $primary;
+  color: $white-2;
 
   &:hover {
     transition: all ease 0.2s;
-    color: $primary-light;
+    color: #fff;
     background-color: $gray-3;
-    box-shadow: 0px 5px 5px 5px #0000001b;
+    box-shadow: 0px 0px 1px $shadow-2;
   }
+
+  &:active {
+    opacity: 0.5;
+    transition: all ease 0.2s;
+  }
+}
+
+.buttonActiveLight {
+  @include button-style;
+  color: $primary-2;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px $shadow;
+
+  &:active {
+    opacity: 0.5;
+    transition: all ease 0.2s;
+  }
+}
+
+.buttonActiveDark {
+  @include button-style;
+  color: $primary;
+  background-color: $gray-2;
+  box-shadow: 0px 0px 10px $shadow-2;
 
   &:active {
     opacity: 0.5;

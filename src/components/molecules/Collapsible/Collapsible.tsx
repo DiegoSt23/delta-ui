@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useState, useEffect } from 'react';
+import { useTheme } from '../../../context';
 import { Plus } from '../../../assets/icons';
 import { Typography } from '../../atoms';
 import styles from './collapsible.module.scss';
@@ -37,6 +38,7 @@ export const Collapsible = ({
   titleClassName,
   contentClassName,
 }: CollapsibleProps) => {
+  const theme = useTheme();
   const [isOpen, setIsOpen] = useState<boolean>(defaultOpen || false);
   const [scrollHeight, setScrollHeight] = useState<number>(0);
 
@@ -51,19 +53,17 @@ export const Collapsible = ({
 
   return (
     <div
-      className={[styles.collapsibleMainContainer, mainContainerClassName].join(
-        ' '
-      )}
+      className={[
+        styles[`collapsibleMainContainer${theme}`],
+        mainContainerClassName,
+      ].join(' ')}
       style={{ backgroundColor }}
     >
       <button
         className={[styles.headerButton, headerClassName].join(' ')}
         onClick={handleOpen}
       >
-        <Typography
-          type='paragraph'
-          className={[styles.title, titleClassName].join(' ')}
-        >
+        <Typography type='subtitle' className={titleClassName}>
           {title}
         </Typography>
         <div

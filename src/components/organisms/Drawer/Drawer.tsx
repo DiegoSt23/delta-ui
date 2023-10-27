@@ -1,4 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react';
+import { useTheme } from '../../../context';
 import styles from './drawer.module.scss';
 
 export interface DrawerProps {
@@ -23,6 +24,7 @@ export const Drawer = ({
   position,
   className,
 }: DrawerProps) => {
+  const theme = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>('none');
   const [opacity, setOpacity] = useState<number>(0);
@@ -74,10 +76,17 @@ export const Drawer = ({
 
   return (
     isOpenLocal && (
-      <div className={styles.backdrop} style={{ opacity }} onClick={onClose}>
+      <div
+        className={styles.backdrop}
+        style={{
+          opacity,
+          background: theme === 'Dark' ? '#000000ca' : '#ffffffc9',
+        }}
+        onClick={onClose}
+      >
         <div
           onClick={(e) => e.stopPropagation()}
-          className={[styles[position || 'left'], className].join(' ')}
+          className={[styles[`${position}${theme}` || 'left'], className].join(' ')}
           style={{
             display,
             ...handleTranslate(),

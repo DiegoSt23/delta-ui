@@ -12,7 +12,6 @@ const Template: StoryFn<AvatarProps> = (args) => (
     style={{
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >

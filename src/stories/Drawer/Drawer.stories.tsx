@@ -26,7 +26,6 @@ const Template: StoryFn<DrawerProps> = (args) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#000000',
         padding: 60,
       }}
     >

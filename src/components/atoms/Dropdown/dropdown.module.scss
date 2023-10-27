@@ -8,6 +8,70 @@
   margin-left: 13px;
 }
 
+@mixin button-style {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 15px;
+  background-color: transparent;
+  border: solid 1px $gray-border;
+  border-radius: 12px;
+  transition: all ease 0.3s;
+  outline: none;
+  font-size: medium;
+  font-family: $red-hat;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .arrow {
+    transition: all ease 0.2s;
+  }
+}
+
+@mixin options-container-style {
+  position: absolute;
+  width: 100%;
+  border-radius: 0px 0px 10px 10px;
+  border: solid 1px $gray-border;
+  outline: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: all ease 0.2s;
+  z-index: 99;
+  overflow: hidden;
+}
+
+@mixin option-style {
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: all ease 0.2s;
+  font-family: $roboto;
+  font-size: small;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.6;
+    transform: scale(0.98);
+    transition: all ease 0.2s;
+  }
+}
+
 .mainContainer {
   position: relative;
   width: 100%;
@@ -23,74 +87,43 @@
     margin-top: 5px;
   }
 
-  .button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 12px 15px;
-    background-color: $black;
-    border: solid 1px $gray-border;
-    border-radius: 12px;
-    transition: all ease 0.3s;
-    outline: none;
+  .buttonLight {
+    @include button-style;
+    color: $gray-2;
+    background-color: #fff;
+  }
+
+  .buttonDark {
+    @include button-style;
     color: $white;
-    font-size: medium;
-    font-family: $red-hat;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-    z-index: 100;
+    background-color: $black;
+  }
 
-    &:disabled {
-      filter: saturate(0.5);
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+  .optionsContainerLight {
+    @include options-container-style;
+    background-color: #fff;
 
-    .arrow {
-      transition: all ease 0.2s;
+    .option {
+      @include option-style;
+      color: $gray-2;
+
+      &:hover {
+        background-color: $white-2;
+        transition: all ease 0.2s;
+      }
     }
   }
 
-  .optionsContainer {
-    position: absolute;
-    width: 100%;
-    border-radius: 0px 0px 10px 10px;
-    border: solid 1px $gray-2;
-    outline: none;
-    padding: 5px;
-    background: -webkit-linear-gradient(-45deg,#1e1e1e,#0a0a0a);
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 5px 5px 5px #0000001b;
-    transition: all ease 0.2s;
-    z-index: 99;
-    overflow: hidden;
+  .optionsContainerDark {
+    @include options-container-style;
+    background-color: $black;
 
     .option {
-      border: none;
-      background-color: transparent;
-      border-radius: 5px;
-      padding: 5px 10px;
-      transition: all ease 0.2s;
+      @include option-style;
       color: $white-2;
-      font-family: $roboto;
-      font-size: small;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
 
       &:hover {
         background-color: $gray-3;
-        transition: all ease 0.2s;
-      }
-
-      &:active {
-        opacity: 0.6;
-        transform: scale(0.98);
         transition: all ease 0.2s;
       }
     }

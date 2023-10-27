@@ -1,6 +1,16 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
+@mixin toast-style {
+  max-width: calc(100% - 40px);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  pointer-events: all;
+  transition: all ease 0.2s;
+  position: absolute;
+}
+
 @mixin toast-main-container-styles {
   position: fixed;
   display: flex;
@@ -12,16 +22,16 @@
   overflow: hidden;
   padding: 20px;
 
-  .toast {
-    max-width: calc(100% - 40px);
-    width: fit-content;
-    height: fit-content;
-    border-radius: 10px;
+  .toastLight {
+    @include toast-style;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px $shadow;
+  }
+
+  .toastDark {
+    @include toast-style;
     background-color: $black;
-    box-shadow: 0px 5px 5px 5px #0000001b;
-    pointer-events: all;
-    transition: all ease 0.2s;
-    position: absolute;
+    box-shadow: 0px 0px 10px $shadow-2;
   }
 }
 

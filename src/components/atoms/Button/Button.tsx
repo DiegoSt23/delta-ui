@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import styles from './button.module.scss';
 
 export interface ButtonProps {
@@ -36,23 +37,26 @@ export const Button = ({
   iconPosition,
   type,
   className,
-}: ButtonProps) => (
-  <button
-    style={{
-      width: fullWidth ? '100%' : 'fit-content',
-      padding: variant !== 'text'
-        ? small ? '5px 10px' : '10px 15px'
-        : '0px',
-    }}
-    className={[styles[variant || 'default'], className].join(' ')}
-    onClick={onClick}
-    disabled={disabled}
-    type={type}
-  >
-    {icon && iconPosition === 'prefix' && icon}
-    {children}
-    {icon && iconPosition === 'suffix' && icon}
-  </button>
-);
+}: ButtonProps) => {
+  const theme = useTheme();
+
+  return (
+    <button
+      style={{
+        width: fullWidth ? '100%' : 'fit-content',
+        padding:
+          variant !== 'text' ? (small ? '5px 10px' : '10px 15px') : '0px',
+      }}
+      className={[styles[`${variant}${theme}` || 'hollowDark'], className].join(' ')}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+    >
+      {icon && iconPosition === 'prefix' && icon}
+      {children}
+      {icon && iconPosition === 'suffix' && icon}
+    </button>
+  );
+};
 
 Button.defaultProps = defaultProps;

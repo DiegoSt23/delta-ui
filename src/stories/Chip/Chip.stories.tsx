@@ -15,7 +15,6 @@ const Template: StoryFn<ChipProps> = (args) => (
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: '#000000',
       padding: 20,
       gap: 10,
     }}

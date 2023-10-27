@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { Typography } from '../Typography';
 import styles from './link.module.scss';
 
@@ -31,24 +32,34 @@ export const Link = ({
   textDecoration,
   className,
   typographyClassName,
-}: LinkProps) => (
-  <a
-    href={href}
-    className={[styles[textDecoration || 'default'], className].join(' ')}
-    target={target}
-    download={download}
-  >
-    {['string', 'number'].includes(typeof children) ? (
-      <Typography
-        className={[styles.typographyStyle, typographyClassName].join(' ')}
-        type={variant}
-      >
-        {children as string}
-      </Typography>
-    ) : (
-      children
-    )}
-  </a>
-);
+}: LinkProps) => {
+  const theme = useTheme();
+
+  return (
+    <a
+      href={href}
+      className={[
+        styles[`${textDecoration || 'default'}${theme}`],
+        className,
+      ].join(' ')}
+      target={target}
+      download={download}
+    >
+      {['string', 'number'].includes(typeof children) ? (
+        <Typography
+          className={[
+            styles[`typographyStyle${theme}`],
+            typographyClassName,
+          ].join(' ')}
+          type={variant}
+        >
+          {children as string}
+        </Typography>
+      ) : (
+        children
+      )}
+    </a>
+  );
+};
 
 Link.defaultProps = defaultProps;

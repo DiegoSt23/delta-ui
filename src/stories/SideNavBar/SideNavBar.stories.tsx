@@ -17,7 +17,6 @@ const Template: StoryFn<SideNavBarProps> = (args) => (
     style={{
       width: '100%',
       height: '100vh',
-      backgroundColor: '#000000',
     }}
   >
     <SideNavBar {...args} />

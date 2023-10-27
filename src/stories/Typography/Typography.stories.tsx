@@ -11,11 +11,8 @@ const Template: StoryFn<TypographyProps> = (args) => (
   <div
     style={{
       width: '100%',
-      minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
-      backgroundColor: '#000000',
       padding: 20,
       gap: 30,
     }}
@@ -31,6 +28,9 @@ const Template: StoryFn<TypographyProps> = (args) => (
     </Typography>
     <Typography {...args} type='heading4'>
       h4. Lorem Ipsum
+    </Typography>
+    <Typography {...args} type='heading5'>
+      h5. Lorem Ipsum
     </Typography>
     <Typography {...args} type='subtitle'>
       subtitle. Lorem ipsum

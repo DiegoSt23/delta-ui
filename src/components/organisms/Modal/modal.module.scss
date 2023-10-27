@@ -6,6 +6,56 @@
   transition: all ease 0.3s;
   border-radius: 20px;
   transition: all ease 0.3s;
+
+  @media screen and (max-width: $large-tablet) {
+    width: 95%;
+  }
+
+  @media screen and (max-width: $phone) {
+    width: 100%;
+    height: 100%;
+  }
+
+  .modalCardStyles {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      background-color: 'transparent';
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray-border;
+      border-radius: 8px;
+      background-clip: padding-box;
+      border: 4px solid $gray-border;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+    @media screen and (max-width: $phone) {
+      border-radius: 0px;
+      height: 100%;
+      border: none;
+    }
+
+    .closeButton {
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all ease 0.2s;
+
+      &:active {
+        opacity: 0.5;
+        transition: all ease 0.2s;
+      }
+    }
+  }
 }
 
 .backdrop {
@@ -14,7 +64,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: #000000ca;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,43 +71,52 @@
   transition: all ease 0.3s;
   z-index: 99;
     
-  .sm {
+  .smLight {
     width: 30%;
     @include modal-container;
-    
-    @media screen and (max-width: $phone) {
-      width: 95%;
-    }
   }
 
-  .md {
+  .smDark {
+    width: 30%;
+    @include modal-container;
+  }
+
+  .mdLight {
     width: 50%;
     @include modal-container;
-    
-    @media screen and (max-width: $phone) {
-      width: 95%;
-    }
   }
 
-  .lg {
+  .mdDark {
+    width: 50%;
+    @include modal-container;
+  }
+
+  .lgLight {
     width: 70%;
     @include modal-container;
-    
-    @media screen and (max-width: $phone) {
-      width: 95%;
-    }
   }
 
-  .xl {
+  .lgDark{
+    width: 70%;
+    @include modal-container;
+  }
+
+  .xlLight {
     width: 95%;
     @include modal-container;
-    
-    @media screen and (max-width: $phone) {
-      width: 95%;
-    }
   }
 
-  .auto {
+  .xlDark {
+    width: 95%;
+    @include modal-container;
+  }
+
+  .autoLight {
+    width: auto;
+    @include modal-container;
+  }
+
+  .autoDark {
     width: auto;
     @include modal-container;
   }

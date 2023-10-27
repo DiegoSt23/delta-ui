@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTheme } from '../../../context';
 import styles from './text-area.module.scss';
 
 export interface TextAreaProps {
@@ -49,6 +50,7 @@ export const TextArea = ({
   onFocus,
   className,
 }: TextAreaProps) => {
+  const theme = useTheme();
   const [val, setVal] = useState<string>(value);
 
   const onChangeLocal = (value: string) => {
@@ -63,7 +65,7 @@ export const TextArea = ({
     >
       {label && <p className={styles.label}>{label}</p>}
       <textarea
-        className={[styles.textArea, className].join(' ')}
+        className={[styles[`textArea${theme}`], className].join(' ')}
         value={val}
         id={id}
         placeholder={placeholder}

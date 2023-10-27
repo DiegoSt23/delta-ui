@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { Typography } from '../../atoms';
 import styles from './card.module.scss';
 
@@ -36,19 +37,26 @@ export const Card = ({
   titleClassName,
   footerClassName,
 }: CardProps) => {
+  const theme = useTheme();
+
   return (
     <div
       style={{ width: fullWidth ? '100%' : 'fit-content' }}
-      className={[styles.mainContainer, mainContainerClassName].join(' ')}
+      className={[styles[`mainContainer${theme}`], mainContainerClassName].join(' ')}
     >
-      {headerTitle && (
-        <div className={[styles.header, headerClassName].join(' ')}>
-          <Typography
-            type='heading3'
-            className={[styles.title, titleClassName].join(' ')}
-          >
-            {headerTitle}
-          </Typography>
+      {(headerTitle || headerElement) && (
+        <div
+          className={[styles.header, headerClassName].join(' ')}
+          style={{ justifyContent: headerTitle ? 'space-between' : 'flex-end' }}
+        >
+          {headerTitle && (
+            <Typography
+              type='heading3'
+              className={[styles.title, titleClassName].join(' ')}
+            >
+              {headerTitle}
+            </Typography>
+          )}
           {headerElement || null}
         </div>
       )}

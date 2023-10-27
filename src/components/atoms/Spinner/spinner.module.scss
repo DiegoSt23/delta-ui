@@ -2,7 +2,7 @@
 @import "../../../styles/global.scss";
 
 @mixin spin-styles {
-  border-top: 3px solid $white-2;
+  border-top: 3px solid $gray;
   border-right: 3px solid transparent;
   border-radius: 50%;
   display: inline-block;
@@ -18,7 +18,7 @@
 @mixin spin-2-styles {
   border-radius: 50%;
   display: inline-block;
-  border-top: 3px solid $white-2;
+  border-top: 3px solid $gray;
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
@@ -40,7 +40,7 @@
   left: 0;
   top: 0;
   border-radius: 50%;
-  border-bottom: 3px solid $white-2;
+  border-bottom: 3px solid $gray;
   border-left: 3px solid transparent;
 }
 
@@ -70,7 +70,7 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 3px solid;
-  border-color: $white-2 transparent;
+  border-color: $gray transparent;
 }
 
 @mixin pulse-styles {
@@ -104,7 +104,7 @@
 }
 
 @mixin pulse-2-styles {
-  background: $white-2;
+  background: $gray;
   display: inline-block;
   border-radius: 50%;
   box-sizing: border-box;
@@ -204,7 +204,7 @@
     @include double-spin-styles;
     width: 20px;
     height: 20px;
-    border: 3px solid $white-2;
+    border: 3px solid $gray;
 
     &::after {
       @include double-spin-styles-after;
@@ -217,7 +217,7 @@
     @include double-spin-styles;
     width: 35px;
     height: 35px;
-    border: 4px solid $white-2;
+    border: 4px solid $gray;
 
     &::after {
       @include double-spin-styles-after;
@@ -230,7 +230,7 @@
     @include double-spin-styles;
     width: 50px;
     height: 50px;
-    border: 6px solid $white-2;
+    border: 6px solid $gray;
 
     &::after {
       @include double-spin-styles-after;
@@ -245,13 +245,13 @@
     @include pulse-styles;
     width: 20px;
     height: 20px;
-    border: 3px solid $white-2;
+    border: 3px solid $gray;
 
     &::after {
       @include pulse-styles-after;
       width: 20px;
       height: 20px;
-      border: 3px solid $white-2;
+      border: 3px solid $gray;
     }
   }
 
@@ -259,13 +259,13 @@
     @include pulse-styles;
     width: 35px;
     height: 35px;
-    border: 4px solid $white-2;
+    border: 4px solid $gray;
 
     &::after {
       @include pulse-styles-after;
       width: 35px;
       height: 35px;
-      border: 4px solid $white-2;
+      border: 4px solid $gray;
     }
   }
 
@@ -273,13 +273,13 @@
     @include pulse-styles;
     width: 50px;
     height: 50px;
-    border: 6px solid $white-2;
+    border: 6px solid $gray;
 
     &::after {
       @include pulse-styles-after;
       width: 50px;
       height: 50px;
-      border: 6px solid $white-2;
+      border: 6px solid $gray;
     }
   }
 }
@@ -309,20 +309,20 @@
     @include dots-styles;
     width: 20px;
     height: 20px;
-    border: 3px dotted $white-2;
+    border: 3px dotted $gray;
   }
 
   .md {
     @include dots-styles;
     width: 35px;
     height: 35px;
-    border: 5px dotted $white-2;
+    border: 5px dotted $gray;
   }
 
   .lg {
     @include dots-styles;
     width: 50px;
     height: 50px;
-    border: 6px dotted $white-2;
+    border: 6px dotted $gray;
   }
 }

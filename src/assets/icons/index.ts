@@ -10,3 +10,4 @@ export * from './Success';
 export * from './Warning';
 export * from './Plus';
 export * from './ArrowRight';
+export * from './Close';

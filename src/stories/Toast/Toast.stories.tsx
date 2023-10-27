@@ -21,7 +21,6 @@ const Template: StoryFn<ToastProps> = (args) => {
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        backgroundColor: '#000000',
         padding: 20,
       }}
     >

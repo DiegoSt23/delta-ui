@@ -13,7 +13,6 @@ const Template: StoryFn<BadgeProps> = (args) => (
     style={{
       width: '100%',
       minHeight: '100vh',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >
@@ -31,7 +30,7 @@ export const CustomColor = Template.bind({});
 export const CustomIndicator = Template.bind({});
 
 Dot.args = {
-  children: <Avatar name='Diego Alvarez' size="sm" />,
+  children: <Avatar name='Diego Alvarez' size="md" />,
 };
 
 Count.args = {

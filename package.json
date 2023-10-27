@@ -1,6 +1,6 @@
 {
   "name": "diego-react-delta-ui",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "React components library",
   "type": "module",
   "main": "./dist/diego-react-delta-ui.umd.cjs",
@@ -42,6 +42,7 @@
     "@storybook/addon-interactions": "^7.2.2",
     "@storybook/addon-links": "^7.2.2",
     "@storybook/addon-mdx-gfm": "^7.2.2",
+    "@storybook/addon-styling": "^2.0.2-next.4",
     "@storybook/manager-api": "^7.3.2",
     "@storybook/react": "^7.2.2",
     "@storybook/react-vite": "^7.2.2",
@@ -60,6 +61,7 @@
     "eslint-plugin-storybook": "^0.6.13",
     "sass": "^1.63.6",
     "storybook": "^7.2.2",
+    "storybook-dark-mode": "^3.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^3.3.1"

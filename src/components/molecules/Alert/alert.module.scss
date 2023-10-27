@@ -5,6 +5,28 @@
   font-family: $roboto;
 }
 
+@mixin action-button {
+  background-color: transparent;
+  border: none;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  font-family: $roboto;
+  font-size: 0.8em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-transform: uppercase;
+
+  &:active {
+    opacity: 0.5;
+    transition: all ease 0.2s;
+  }
+}
+
 .alertMainContainer {
   width: 100%;
   padding: 10px;
@@ -25,48 +47,55 @@
       flex-direction: column;
       gap: 5px;
 
-      .success {
+      .successLight {
+        color: #3c891d;
+        @include alert-font-family;
+      }
+
+      .successDark {
         color: #c1faaa;
         @include alert-font-family;
       }
 
-      .info {
+      .infoLight {
+        color: #495ebc;
+        @include alert-font-family;
+      }
+
+      .infoDark {
         color: #949fd1;
         @include alert-font-family;
       }
 
-      .warning {
+      .warningLight {
+        color: #a2891a;
+        @include alert-font-family;
+      }
+
+      .warningDark {
         color: #e8d478;
         @include alert-font-family;
       }
 
-      .error {
+      .errorLight {
+        color: #c73463;
+        @include alert-font-family;
+      }
+
+      .errorDark {
         color: #ff89ae;
         @include alert-font-family;
       }
     }
 
-    .actionButton {
-      background-color: transparent;
-      border: none;
-      transition: all ease 0.2s;
-      cursor: pointer;
-      color: $white-2;
-      font-family: $roboto;
-      font-size: 0.8em;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-      padding-left: 10px;
-      text-transform: uppercase;
+    .actionButtonLight {
+      @include action-button;
+      color: $gray;
+    }
 
-      &:active {
-        opacity: 0.5;
-        transition: all ease 0.2s;
-      }
+    .actionButtonDark {
+      @include action-button;
+      color: $white-2;
     }
   }
 }

@@ -1,5 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ReactNode, useState, useEffect } from 'react';
+import {
+  ReactNode,
+  useState,
+  useEffect,
+  FocusEventHandler,
+} from 'react';
+import { useTheme } from '../../../context';
 import { EyeClosed, Eye } from '../../../assets/icons';
 import { Button } from '../Button';
 import styles from './input.module.scss';
@@ -19,8 +25,8 @@ export interface InputProps {
   error?: boolean;
   maxLength?: number;
   minLength?: number;
-  onBlur?: () => void;
-  onFocus?: () => void;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
   containerClassName?: string;
   inputClassName?: string;
 }
@@ -62,6 +68,7 @@ export const Input = ({
   containerClassName,
   inputClassName,
 }: InputProps) => {
+  const theme = useTheme();
   const [text, setText] = useState<string>(value);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const inputType = showPassword && type === 'password'
@@ -97,7 +104,7 @@ export const Input = ({
           minLength={minLength}
           onBlur={onBlur}
           onFocus={onFocus}
-          className={[styles.input, inputClassName].join(' ')}
+          className={[styles[`input${theme}`], inputClassName].join(' ')}
           style={{
             width: buttonContent ? '90%' : '100%',
             padding: buttonContent ? '10px 0px 10px 10px' : '10px',

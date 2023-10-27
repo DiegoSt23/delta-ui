@@ -16,14 +16,16 @@ const Template: StoryFn<ToggleProps> = (args) => {
       style={{
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#000000',
         padding: 20,
       }}
     >
       <Toggle
         {...args}
         isActive={isActive}
-        onChange={(val) => setIsActive(val)}
+        onChange={(val) => {
+          setIsActive(val);
+          console.log(val);
+        }}
       />
     </div>
   );
@@ -54,7 +56,7 @@ WithLabel.args = {
 };
 
 CustomColor.args = {
-  buttonColor: '#4f3178',
+  buttonColor: '#946ec9',
   color: '#ff3f4f',
 };
 

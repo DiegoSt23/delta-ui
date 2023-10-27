@@ -8,6 +8,21 @@
   margin-left: 13px;
 }
 
+@mixin input-style {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: medium;
+  font-family: $red-hat;
+  font-weight: 500;
+
+  &:disabled {
+    filter: saturate(0.5);
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
 .mainContainer {
 
   .label {
@@ -26,20 +41,14 @@
     border-radius: 12px;
     transition: all ease 0.3s;
 
-    .input {
-      background-color: transparent;
-      border: none;
-      outline: none;
-      color: $white;
-      font-size: medium;
-      font-family: $red-hat;
-      font-weight: 500;
+    .inputLight {
+      @include input-style;
+      color: $gray-2;
+    }
 
-      &:disabled {
-        filter: saturate(0.5);
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
+    .inputDark {
+      @include input-style;
+      color: $white;
     }
   }
 

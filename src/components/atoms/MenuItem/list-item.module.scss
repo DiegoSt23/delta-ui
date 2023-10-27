@@ -1,51 +1,72 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
+@mixin button-style {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all ease 0.2s;
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+  }
+
+  .descriptionContainer {
+    margin-top: 5px;
+
+    .description {
+      font-family: $red-hat;
+      font-size: smaller;
+      text-align: left;
+    }
+  }
+}
+
+@mixin title-container {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  gap: 10px;
+
+  .title {
+    font-size: small;
+    font-family: $roboto;
+  }
+}
+
 .mainContainer {
   width: 100%;
 
-  .button {
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    border-radius: 5px;
-    padding: 5px 10px;
-    transition: all ease 0.2s;
-    cursor: pointer;
+  .buttonLight {
+    @include button-style;
+
+    &:hover {
+      background-color: $white-3;
+      transition: all ease 0.2s;
+    }
+
+    .titleContainer {
+      @include title-container;
+      color: $gray;
+    }
+  }
+
+  .buttonDark {
+    @include button-style;
 
     &:hover {
       background-color: $gray-3;
       transition: all ease 0.2s;
     }
 
-    &:active {
-      opacity: 0.6;
-      transform: scale(0.9);
-      transition: all ease 0.2s;
-    }
-
     .titleContainer {
-      display: flex;
-      align-items: center;
+      @include title-container;
       color: $white-2;
-      font-size: small;
-      gap: 10px;
-
-      .title {
-        font-size: small;
-        font-family: $roboto;
-      }
-    }
-
-    .descriptionContainer {
-      margin-top: 5px;
-
-      .description {
-        font-family: $red-hat;
-        font-size: smaller;
-        color: gray;
-        text-align: left;
-      }
     }
   }
 }

@@ -1,22 +1,16 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/global.scss";
 
-@mixin text-styles {
-  color: $primary-light;
+@mixin text-styles-default {
   cursor: pointer;
-}
-
-.default {
-  @include text-styles;
   text-decoration: none;
 }
 
-.underline {
-  @include text-styles;
+@mixin text-styles-underline {
+  cursor: pointer;
 }
 
-.typographyStyle {
-  color: $primary-light;
+@mixin typography-style {
   font-weight: 700;
   transition: all ease 0.2s;
 
@@ -24,4 +18,32 @@
     opacity: 0.6;
     transition: all ease 0.2s;
   }
+}
+
+.defaultLight {
+  @include text-styles-default;
+}
+
+.defaultDark {
+  @include text-styles-default;
+}
+
+.underlineLight {
+  @include text-styles-underline;
+  color: $primary-2-light;
+}
+
+.underlineDark {
+  @include text-styles-underline;
+  color: $primary-light;
+}
+
+.typographyStyleLight {
+  @include typography-style;
+  color: $primary-2-light;
+}
+
+.typographyStyleDark {
+  @include typography-style;
+  color: $primary-light;
 }

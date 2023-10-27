@@ -18,7 +18,6 @@ const Template: StoryFn<MenuProps> = (args) => (
       minHeight: '100vh',
       display: 'flex',
       justifyContent: 'center',
-      backgroundColor: '#000000',
       padding: 20,
     }}
   >

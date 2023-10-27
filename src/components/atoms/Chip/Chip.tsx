@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../../context';
 import { Typography } from '../Typography';
 import styles from './chip.module.scss';
 
@@ -20,14 +21,18 @@ export const Chip = ({
   color,
   icon,
   iconPosition
-}: ChipProps) => (
-  <div className={styles[color || 'primary']}>
-    {icon && iconPosition === 'prefix' && icon}
-    <Typography type='paragraph2' className={styles.text}>
-      {children}
-    </Typography>
-    {icon && iconPosition === 'suffix' && icon}
-  </div>
-);
+}: ChipProps) => {
+  const theme = useTheme();
+
+  return (
+    <div className={styles[`${color}${theme}` || 'primaryDark']}>
+      {icon && iconPosition === 'prefix' && icon}
+      <Typography type='paragraph2' className={styles.text}>
+        {children}
+      </Typography>
+      {icon && iconPosition === 'suffix' && icon}
+    </div>
+  );
+};
 
 Chip.defaultProps = defaultProps;
