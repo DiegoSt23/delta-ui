@@ -1,8 +1,10 @@
 # delta-ui
 
-Delta-UI is a lightweight and minimalistic React components library designed to provide a seamless user experience. With a focus on simplicity and performance, Delta-UI offers a curated set of reusable and customizable components that can easily be integrated into any React project. The library embraces the principles of dark mode design, ensuring a visually appealing and comfortable interface in low-light conditions.
+Delta-UI is a versatile React components library that offers a seamless user experience with support for both light and dark modes. This lightweight and minimalistic library is designed to enhance the visual appeal and functionality of your React applications. It provides a curated collection of reusable and customizable components, making it easy to integrate Delta-UI into any React project.
 
--**Dark Mode Ready**: Delta-UI is optimized for dark mode, providing a stunning visual experience for users in dimly lit environments.
+**Key Features**:
+
+-**Light and Dark Mode Ready**: Delta-UI is optimized for both light and dark modes, ensuring an exceptional visual experience for users in any lighting condition.
 
 -**Lightweight and Performant**: With a minimal footprint, Delta-UI prioritizes performance, ensuring quick loading times and smooth interactions for enhanced user satisfaction.
 
@@ -10,7 +12,7 @@ Delta-UI is a lightweight and minimalistic React components library designed to 
 
 -**Responsive Design**: The components in Delta-UI are responsive, ensuring a consistent user experience across various screen sizes and devices.
 
-Whether you're working on a personal project or a professional application, Delta-UI provides an ideal toolkit for developers seeking a lightweight, minimalistic, and dark mode-friendly React components library that effortlessly enhances the user experience.
+Whether you're working on a personal project or a professional application, Delta-UI provides the perfect toolkit for developers seeking a lightweight, minimalistic, and mode-flexible React components library that effortlessly elevates the user experience.
 
 ### Installation
 ```
@@ -21,6 +23,18 @@ npm i diego-react-delta-ui
 At your index.ts:
 ```js
 import 'diego-react-delta-ui/dist/style.css';
+```
+
+At some high point of your application:
+```js
+import { ThemeProvider } 'diego-react-delta-ui';
+
+const App = () => (
+  // theme: 'Dark' | 'Light'
+  <ThemeProvider theme={theme}>
+    <Main />
+  </div>
+);
 ```
 
 And that's it, now just import and use the components:
