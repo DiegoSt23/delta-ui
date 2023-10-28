@@ -63,7 +63,8 @@ export const Modal = ({
           className={styles.backdrop}
           style={{
             opacity,
-            background: theme === 'Dark' ? '#000000ca' : '#ffffffc9',
+            background: theme === 'Dark' ? '#000000e1' : '#ffffffe1',
+            backdropFilter: 'blur(2px)',
           }}
           onClick={onClose}
         >
