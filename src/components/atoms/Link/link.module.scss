@@ -22,10 +22,12 @@
 
 .defaultLight {
   @include text-styles-default;
+  color: $primary-2-light;
 }
 
 .defaultDark {
   @include text-styles-default;
+  color: $primary-light;
 }
 
 .underlineLight {
