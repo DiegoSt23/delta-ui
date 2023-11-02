@@ -45,7 +45,7 @@ export const Checkbox = ({
   checkedIcon,
   checkedColor,
 }: CheckboxProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [isChecked, setIsChecked] = useState<boolean>(
     isDefaultChecked || false
   );

@@ -30,7 +30,7 @@ export const Progress = ({
   containerClassName,
   progressBarClassName,
 }: ProgressProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [percent, setPercent] = useState<number>(0);
 
   const handleCalculatePercent = (partialValue: number, totalValue: number) => {

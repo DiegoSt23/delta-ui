@@ -38,7 +38,7 @@ export const Collapsible = ({
   titleClassName,
   contentClassName,
 }: CollapsibleProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState<boolean>(defaultOpen || false);
   const [scrollHeight, setScrollHeight] = useState<number>(0);
 

@@ -24,7 +24,7 @@ export const Tooltip = ({
   maxWidth,
   className,
 }: TooltipProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={styles.mainContainer}>

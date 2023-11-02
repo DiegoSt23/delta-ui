@@ -22,7 +22,7 @@ export const Chip = ({
   icon,
   iconPosition
 }: ChipProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={styles[`${color}${theme}` || 'primaryDark']}>

@@ -88,7 +88,7 @@ export const Table = ({
   bodyRowsClassName,
   headerRowClassName,
 }: TableProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [localItems, setLocalItems] = useState<ItemProps[]>(items);
   const [selectedRows, setSelectedRows] = useState<(number | string)[]>([]);
   const columnsWidth = labels?.map(

@@ -42,7 +42,7 @@ export const Tabs = ({
   activeTabContainerClassName,
   contentContainerClassName,
 }: TabsProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [activeKey, setActiveKey] = useState<string | number>(
     defaultActiveTabKey || items[0].key
   );

@@ -30,7 +30,7 @@ export const Modal = ({
   size,
   customCloseIcon,
 }: ModalProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>('none');
   const [top, setTop] = useState<number | undefined>(-100);
