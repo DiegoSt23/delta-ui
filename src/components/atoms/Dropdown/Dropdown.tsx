@@ -45,7 +45,7 @@ export const Dropdown = ({
   optionsContainerClassName,
   optionClassName,
 }: DropdownProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [displayDropdown, setDisplayDropdown] = useState<boolean>(false);
   const [applyChanges, setApplyChanges] = useState<boolean>(false);
   const [opacity, setOpacity] = useState<number>(0);

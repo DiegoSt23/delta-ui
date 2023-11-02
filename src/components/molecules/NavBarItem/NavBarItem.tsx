@@ -35,7 +35,7 @@ export const NavBarItem = ({
   activeClassName,
   render,
 }: NavBarItemProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <Tooltip tooltipContent={name} position='right'>

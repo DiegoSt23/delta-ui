@@ -85,7 +85,7 @@ export const Alert = ({
   mainContainerClassName,
   textClassName,
 }: AlertProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div

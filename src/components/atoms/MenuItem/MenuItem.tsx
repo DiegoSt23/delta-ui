@@ -27,7 +27,7 @@ export const MenuItem = ({
   underline,
   className,
 }: MenuItemProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div

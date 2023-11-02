@@ -49,7 +49,7 @@ export const Toggle = ({
   buttonClassName,
   toggleClassName,
 }: ToggleProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [localIsActive, setLocalIsActive] = useState<boolean>(isActive);
 
   const handleChangeActive = () => setLocalIsActive(!localIsActive);

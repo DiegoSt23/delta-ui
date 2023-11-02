@@ -50,7 +50,7 @@ export const Toast = forwardRef<ToastRefProps, ToastProps>(
     },
     ref
   ) => {
-    const theme = useTheme();
+    const { theme } = useTheme();
     const [displayLocalToast, setDisplayLocalToast] = useState<boolean>(false);
     const [opacity, setOpacity] = useState<number>(0);
     const [translateX, setTranslateX] = useState<number>(

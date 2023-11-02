@@ -44,7 +44,7 @@ export const TableRow = ({
   onRowSelection,
   mainContainerClassName,
 }: TableRowProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [isRowSelected, setIsRowSelected] = useState<boolean>(false);
   const totalNumberOfColumns = items
     ?.map((item) => item.numberOfColumns)

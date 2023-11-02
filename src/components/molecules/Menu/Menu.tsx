@@ -34,7 +34,7 @@ export const Menu = ({
   optionsContainerClassName,
   optionsClassName,
 }: MenuProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const menuRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [opacity, setOpacity] = useState<number>(0);

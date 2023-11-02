@@ -28,7 +28,7 @@ export const Typography = ({
   className,
   upperCase,
 }: TypographyProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <p className={[styles[`${type}${theme}` || 'paragraphDark'], className].join(' ')}>

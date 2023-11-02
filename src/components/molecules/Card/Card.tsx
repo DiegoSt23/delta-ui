@@ -37,7 +37,7 @@ export const Card = ({
   titleClassName,
   footerClassName,
 }: CardProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div

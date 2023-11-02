@@ -30,7 +30,7 @@ export const SideNavBar = ({
   itemClassName,
   activeItemClassName,
 }: SideNavBarProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div

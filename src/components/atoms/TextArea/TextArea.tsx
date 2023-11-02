@@ -50,7 +50,7 @@ export const TextArea = ({
   onFocus,
   className,
 }: TextAreaProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [val, setVal] = useState<string>(value);
 
   const onChangeLocal = (value: string) => {

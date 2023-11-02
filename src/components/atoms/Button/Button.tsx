@@ -38,7 +38,7 @@ export const Button = ({
   type,
   className,
 }: ButtonProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <button

@@ -68,7 +68,7 @@ export const Input = ({
   containerClassName,
   inputClassName,
 }: InputProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [text, setText] = useState<string>(value);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const inputType = showPassword && type === 'password'

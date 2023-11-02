@@ -33,7 +33,7 @@ export const Link = ({
   className,
   typographyClassName,
 }: LinkProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
     <a

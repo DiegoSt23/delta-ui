@@ -24,7 +24,7 @@ export const Drawer = ({
   position,
   className,
 }: DrawerProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>('none');
   const [opacity, setOpacity] = useState<number>(0);
