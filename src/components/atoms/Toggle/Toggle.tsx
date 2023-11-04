@@ -69,10 +69,10 @@ export const Toggle = ({
         className={[styles[size || 'md'], buttonClassName].join(' ')}
         style={{
           backgroundColor: localIsActive
-            ? buttonColor || (theme === 'Dark' ? '#303030' : '#d9d9d9')
+            ? buttonColor || (theme === 'Dark' ? '#303030' : '#ebebeb')
             : 'transparent',
           border: `solid 2px ${
-            buttonColor || (theme === 'Dark' ? '#303030' : '#d9d9d9')
+            buttonColor || (theme === 'Dark' ? '#303030' : '#ebebeb')
           }`,
         }}
         onClick={handleChangeActive}
@@ -83,7 +83,7 @@ export const Toggle = ({
           style={{
             left: isActive ? `${leftValues[size || 'md']}px` : '0px',
             backgroundColor:
-              color || (theme === 'Dark' ? '#31dab5' : '#5650ff'),
+              color || (theme === 'Dark' ? '#31dab5' : '#7191f8'),
           }}
         />
       </button>

@@ -43,10 +43,10 @@
 
 .collapsibleMainContainerLight {
   @include collapsible-general-styles;
-  background: -webkit-linear-gradient(-45deg,#c4c4c468,#c4c4c439);
+  background: -webkit-linear-gradient(-45deg,#dfdfdf68,#dfdfdf39);
 
   &:hover {
-    background: -webkit-linear-gradient(-45deg,#ababab68,#ababab39);
+    background: -webkit-linear-gradient(-45deg,#dfdfdf68,#cbcbcb39);
     transition: all ease 0.3s;
   }
 }
@@ -56,7 +56,7 @@
   background: -webkit-linear-gradient(-45deg,#3b3b3b68,#3b3b3b39);
 
   &:hover {
-    background: -webkit-linear-gradient(-45deg,#3b3b3b7e,#3b3b3b4d);
+    background: -webkit-linear-gradient(-45deg,#3b3b3b68,#4343434d);
     transition: all ease 0.3s;
   }
 }

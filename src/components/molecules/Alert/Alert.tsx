@@ -38,10 +38,10 @@ const bgColorsDark = {
 };
 
 const borderColorsLight = {
-  success: '#60e02d79',
-  info: '#9eaef880',
-  warning: '#eeca2a7e',
-  error: '#fe24a37e',
+  success: '#dcecd6',
+  info: '#d5ddff',
+  warning: '#f1eee1',
+  error: '#e9dce4',
 };
 
 const borderColorsDark = {
