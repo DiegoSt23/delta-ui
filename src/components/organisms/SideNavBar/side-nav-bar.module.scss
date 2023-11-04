@@ -42,7 +42,7 @@
 
 .mainContainerLight {
   @include main-container-styles;
-  background: -webkit-linear-gradient(-45deg,#fff,#c4c4c468);
+  background: -webkit-linear-gradient(-45deg,#fff,#f4f4f4);
   border-right: solid 1px #fff;
   box-shadow: 0px 0px 10px $shadow;
 }
