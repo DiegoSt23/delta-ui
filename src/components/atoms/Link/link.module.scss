@@ -22,7 +22,7 @@
 
 .defaultLight {
   @include text-styles-default;
-  color: $primary-2-light;
+  color: $primary-2;
 }
 
 .defaultDark {
@@ -32,7 +32,7 @@
 
 .underlineLight {
   @include text-styles-underline;
-  color: $primary-2-light;
+  color: $primary-2;
 }
 
 .underlineDark {
@@ -42,7 +42,7 @@
 
 .typographyStyleLight {
   @include typography-style;
-  color: $primary-2-light;
+  color: $primary-2;
 }
 
 .typographyStyleDark {
