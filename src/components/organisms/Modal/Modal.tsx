@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, ReactNode } from 'react';
 import { useTheme } from '../../../context';
 import { Close } from '../../../assets/icons';
@@ -33,26 +34,24 @@ export const Modal = ({
   const { theme } = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>('none');
-  const [top, setTop] = useState<number | undefined>(-100);
-  const [opacity, setOpacity] = useState<number>(0);
+  const [scale, setScale] = useState<number>(0);
+  const [backdropColor, setBackdropColor] = useState<string>('transparent');
 
   useEffect(() => {
     if (isOpen) {
       setIsOpenLocal(true);
       setDisplay('block');
+      setBackdropColor(theme === 'Dark' ? '#000000e1' : '#ffffffe1');
       setTimeout(() => {
-        setOpacity(1);
-      }, 300);
-      setTimeout(() => {
-        setTop(0);
-      }, 300);
+        setScale(1);
+      }, 100);
     } else {
-      setTop(-100);
-      setOpacity(0);
+      setScale(0);
+      setBackdropColor('transparent');
       setTimeout(() => {
         setIsOpenLocal(false);
         setDisplay('none');
-      }, 300);
+      }, 100);
     }
   }, [isOpen]);
 
@@ -62,8 +61,7 @@ export const Modal = ({
         <div
           className={styles.backdrop}
           style={{
-            opacity,
-            background: theme === 'Dark' ? '#000000e1' : '#ffffffe1',
+            background: backdropColor,
             backdropFilter: 'blur(2px)',
           }}
           onClick={onClose}
@@ -73,7 +71,7 @@ export const Modal = ({
             className={styles[`${size}${theme}` || 'mdDark']}
             style={{
               display,
-              top: `${top}vh`,
+              transform: `scale(${scale})`,
             }}
           >
             <Card
