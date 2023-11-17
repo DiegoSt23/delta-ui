@@ -10,6 +10,7 @@ export interface ModalProps extends CardProps {
   onClose: () => void;
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'auto';
   customCloseIcon?: ReactNode;
+  backdropClassName?: string;
 }
 
 const defaultProps: Partial<ModalProps> = {
@@ -17,6 +18,7 @@ const defaultProps: Partial<ModalProps> = {
   headerTitle: undefined,
   footer: undefined,
   customCloseIcon: undefined,
+  backdropClassName: undefined,
 };
 
 export const Modal = ({
@@ -30,6 +32,7 @@ export const Modal = ({
   footerClassName,
   size,
   customCloseIcon,
+  backdropClassName,
 }: ModalProps) => {
   const { theme } = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
@@ -44,14 +47,14 @@ export const Modal = ({
       setBackdropColor(theme === 'Dark' ? '#000000e1' : '#ffffffe1');
       setTimeout(() => {
         setScale(1);
-      }, 100);
+      }, 200);
     } else {
       setScale(0);
       setBackdropColor('transparent');
       setTimeout(() => {
         setIsOpenLocal(false);
         setDisplay('none');
-      }, 100);
+      }, 200);
     }
   }, [isOpen]);
 
@@ -59,7 +62,7 @@ export const Modal = ({
     <>
       {isOpenLocal && (
         <div
-          className={styles.backdrop}
+          className={[styles.backdrop, backdropClassName].join(' ')}
           style={{
             background: backdropColor,
             backdropFilter: 'blur(2px)',
