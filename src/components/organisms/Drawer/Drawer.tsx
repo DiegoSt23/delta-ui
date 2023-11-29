@@ -64,9 +64,6 @@ export const Drawer = ({
       setIsOpenLocal(true);
       setDisplay('block');
       setBackdropColor(theme === 'Dark' ? '#000000e1' : '#ffffffe1');
-      // setTimeout(() => {
-      //   setOpacity(1);
-      // }, 300);
       setTimeout(() => {
         setTranslate('0%');
       }, 300);
@@ -78,7 +75,7 @@ export const Drawer = ({
         setDisplay('none');
       }, 300);
     }
-  }, [isOpen]);
+  }, [isOpen, theme]);
 
   return (
     isOpenLocal && (
