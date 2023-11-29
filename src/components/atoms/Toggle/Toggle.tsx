@@ -83,7 +83,7 @@ export const Toggle = ({
           style={{
             left: isActive ? `${leftValues[size || 'md']}px` : '0px',
             backgroundColor:
-              color || (theme === 'Dark' ? '#31dab5' : '#7191f8'),
+              color || (theme === 'Dark' ? '#31dab5' : '#ff1d4a'),
           }}
         />
       </button>

@@ -8,7 +8,7 @@
 }
 
 @mixin heading-light {
-  background: -webkit-linear-gradient(180deg,#949494,#555555);
+  background: -webkit-linear-gradient(180deg,#626262,#000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-user-select: none;
@@ -95,7 +95,7 @@
 
 .subtitleLight {
   @include paragraph-styles;
-  color: rgb(94, 94, 94);
+  color: rgb(42, 42, 42);
   font-weight: 500;
   font-size: large;
   letter-spacing: 0.5px;
