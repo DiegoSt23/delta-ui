@@ -56,7 +56,7 @@ export const Modal = ({
         setDisplay('none');
       }, 200);
     }
-  }, [isOpen]);
+  }, [isOpen, theme]);
 
   return (
     <>
