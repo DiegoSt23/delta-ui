@@ -6,7 +6,7 @@ import { Typography } from '../../atoms';
 import styles from './collapsible.module.scss';
 
 export interface CollapsibleProps {
-  title: string;
+  title: string | ReactNode;
   content: ReactNode;
   defaultOpen?: boolean;
   onPress?: () => void;
@@ -63,9 +63,13 @@ export const Collapsible = ({
         className={[styles.headerButton, headerClassName].join(' ')}
         onClick={handleOpen}
       >
-        <Typography type='subtitle' className={titleClassName}>
-          {title}
-        </Typography>
+        {typeof title === 'string' ? (
+          <Typography type='subtitle' className={titleClassName}>
+            {title}
+          </Typography>
+        ) : (
+          title
+        )}
         <div
           className={styles.openButton}
           style={{ transform: `rotate(${isOpen ? 45 : 0}deg)` }}

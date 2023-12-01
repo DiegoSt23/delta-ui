@@ -9,12 +9,14 @@ export interface DrawerProps {
   children: ReactNode;
   header?: string | ReactNode
   position?: 'left' | 'right' | 'top' | 'bottom';
+  size?: number;
   className?: string,
 }
 
 const defaultProps: Partial<DrawerProps> = {
   header: undefined,
   position: 'left',
+  size: 300,
   className: undefined,
 };
 
@@ -23,39 +25,36 @@ export const Drawer = ({
   onClose,
   children,
   position,
+  size,
   className,
 }: DrawerProps) => {
   const { theme } = useTheme();
   const [isOpenLocal, setIsOpenLocal] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>('none');
-  const [translate, setTranslate] = useState<string>('100%');
+  const [translate, setTranslate] = useState<number>(size ?? 300);
   const [backdropColor, setBackdropColor] = useState<string>('transparent');
 
   const handleTranslate = () => {
     if (position === 'left') {
       return {
-        left: 0,
-        transform: `translateX(-${translate})`,
+        transform: `translateX(-${translate}px)`,
       };
     }
 
     if (position === 'top') {
       return {
-        top: 0,
-        transform: `translateY(-${translate})`,
+        transform: `translateY(-${translate}px)`,
       };
     }
 
     if (position === 'bottom') {
       return {
-        bottom: 0,
-        transform: `translateY(${translate})`,
+        transform: `translateY(${translate}px)`,
       };
     }
 
     return {
-      right: 0,
-      transform: `translateX(${translate})`,
+      transform: `translateX(${translate}px)`,
     };
   };
 
@@ -65,26 +64,35 @@ export const Drawer = ({
       setDisplay('block');
       setBackdropColor(theme === 'Dark' ? '#000000e1' : '#ffffffe1');
       setTimeout(() => {
-        setTranslate('0%');
+        setTranslate(0);
       }, 300);
     } else {
-      setTranslate('100%');
+      setTranslate(size ?? 300);
       setBackdropColor('transparent');
       setTimeout(() => {
         setIsOpenLocal(false);
         setDisplay('none');
       }, 300);
     }
-  }, [isOpen, theme]);
+  }, [isOpen, theme, size]);
 
   return (
     isOpenLocal && (
       <div
         className={styles.backdrop}
         style={{
-          // opacity,
           background: backdropColor,
           backdropFilter: 'blur(2px)',
+          justifyContent: ['left', 'right'].includes(position ?? 'top')
+            ? position === 'left'
+              ? 'flex-start'
+              : 'flex-end'
+            : '',
+          alignItems: ['top', 'bottom'].includes(position ?? 'top')
+            ? position === 'top'
+              ? 'flex-start'
+              : 'flex-end'
+            : '',
         }}
         onClick={onClose}
       >
@@ -93,6 +101,12 @@ export const Drawer = ({
           className={[styles[`${position}${theme}` || 'left'], className].join(' ')}
           style={{
             display,
+            width: ['top', 'bottom'].includes(position ?? 'top')
+              ? '100%'
+              : size,
+            height: ['left', 'right'].includes(position ?? 'top')
+              ? '100%'
+              : size,
             ...handleTranslate(),
           }}
         >

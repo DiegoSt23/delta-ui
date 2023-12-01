@@ -11,7 +11,8 @@
   border-left: solid 4px #87878738;
   border-radius: 10px;
   backdrop-filter: blur(20px);
-  transition: all ease 0.3s;
+  transition: height linear 0.3s;
+  will-change: height;
 
   .headerButton {
     @include full-width;
@@ -25,14 +26,16 @@
     border-radius: 10px;
 
     .openButton {
-      transition: all ease 0.3s;
+      transition: transform ease 0.3s;
+      will-change: transform;
     }
   }
 
   .collapsible {
     @include full-width;
     overflow: hidden;
-    transition: all ease 0.3s;
+    transition: height ease 0.3s;
+    will-change: height;
 
     .contentContainer {
       @include full-width;
@@ -47,7 +50,6 @@
 
   &:hover {
     background: -webkit-linear-gradient(-45deg,#dfdfdf68,#cbcbcb39);
-    transition: all ease 0.3s;
   }
 }
 
@@ -57,6 +59,5 @@
 
   &:hover {
     background: -webkit-linear-gradient(-45deg,#3b3b3b68,#4343434d);
-    transition: all ease 0.3s;
   }
 }
