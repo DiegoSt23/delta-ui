@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Input, InputProps } from '../../components';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -8,17 +9,21 @@ export default {
   argTypes: {},
 } as Meta<typeof Input>;
 
-const Template: StoryFn<InputProps> = (args) => (
-  <div
-    style={{
-      width: '100%',
-      minHeight: '100vh',
-      padding: 20,
-    }}
-  >
-    <Input {...args} />
-  </div>
-);
+const Template: StoryFn<InputProps> = (args) => {
+  const [val, setVal] = useState<string>('');
+
+  return (
+    <div
+      style={{
+        width: '100%',
+        minHeight: '100vh',
+        padding: 20,
+      }}
+    >
+      <Input {...args} value={val} onChange={(value) => setVal(value)} />
+    </div>
+  );
+};
 
 export const Text = Template.bind({});
 export const Password = Template.bind({});

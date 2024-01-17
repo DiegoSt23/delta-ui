@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { TextArea, TextAreaProps } from '../../components';
 
@@ -7,17 +8,21 @@ export default {
   argTypes: {},
 } as Meta<typeof TextArea>;
 
-const Template: StoryFn<TextAreaProps> = (args) => (
-  <div
-    style={{
-      width: '100%',
-      minHeight: '100vh',
-      padding: 20,
-    }}
-  >
-    <TextArea {...args} />
-  </div>
-);
+const Template: StoryFn<TextAreaProps> = (args) => {
+  const [val, setVal] = useState<string>('');
+
+  return (
+    <div
+      style={{
+        width: '100%',
+        minHeight: '100vh',
+        padding: 20,
+      }}
+    >
+      <TextArea {...args} value={val} onChange={(value) => setVal(value)} />
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 export const Label = Template.bind({});

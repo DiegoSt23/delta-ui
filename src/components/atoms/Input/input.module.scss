@@ -8,6 +8,18 @@
   margin-left: 13px;
 }
 
+@mixin input-container-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 2px 3px;
+  background-color: transparent;
+  border: solid 1px $gray-border;
+  border-radius: 12px;
+  transition: all ease 0.3s;
+}
+
 @mixin input-style {
   background-color: transparent;
   border: none;
@@ -30,26 +42,34 @@
     margin-bottom: 5px;
   }
 
-  .inputContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 2px 3px;
-    background-color: transparent;
-    border: solid 1px $gray-border;
-    border-radius: 12px;
-    transition: all ease 0.3s;
+  .inputContainerLight {
+    @include input-container-style;
 
-    .inputLight {
+    &:focus-within {
+      border: solid 1px $gray;
+    }
+
+    .input {
       @include input-style;
       color: $gray-2;
     }
+  }
 
-    .inputDark {
+  .inputContainerDark {
+    @include input-container-style;
+
+    &:focus-within {
+      border: solid 1px $white-2;
+    }
+
+    .input {
       @include input-style;
       color: $white;
     }
+  }
+
+  .errorBorder {
+    border: solid 1px $error !important;
   }
 
   .helperText {
