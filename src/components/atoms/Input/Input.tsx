@@ -2,7 +2,6 @@
 import {
   ReactNode,
   useState,
-  useEffect,
   FocusEventHandler,
 } from 'react';
 import { useTheme } from '../../../context';
@@ -69,7 +68,6 @@ export const Input = ({
   inputClassName,
 }: InputProps) => {
   const { theme } = useTheme();
-  const [text, setText] = useState<string>(value);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const inputType = showPassword && type === 'password'
     ? 'text'
@@ -79,10 +77,6 @@ export const Input = ({
 
   const handleShowPassword = () => setShowPassword(!showPassword);
 
-  useEffect(() => {
-    onChange(text);
-  }, [text]);
-
   return (
     <div
       className={styles.mainContainer}
@@ -90,21 +84,20 @@ export const Input = ({
     >
       {label && <p className={styles.label}>{label}</p>}
       <div
-        className={[styles.inputContainer, containerClassName].join(' ')}
-        style={{ borderColor: error ? '#ff1b63' : '#80808044' }}
+        className={[styles[`inputContainer${theme}`], error && styles.errorBorder, containerClassName].join(' ')}
       >
         <input
           type={inputType}
-          value={text}
+          value={value}
           placeholder={placeholder}
           name={name}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => onChange(e.target.value)}
           disabled={disabled}
           maxLength={maxLength}
           minLength={minLength}
           onBlur={onBlur}
           onFocus={onFocus}
-          className={[styles[`input${theme}`], inputClassName].join(' ')}
+          className={[styles.input, inputClassName].join(' ')}
           style={{
             width: buttonContent ? '90%' : '100%',
             padding: buttonContent ? '10px 0px 10px 10px' : '10px',

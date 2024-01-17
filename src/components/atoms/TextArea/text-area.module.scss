@@ -18,6 +18,7 @@
   font-weight: 500;
   border-radius: 12px;
   padding: 12px;
+  resize: vertical;
 
   &:disabled {
     filter: saturate(0.5);
@@ -36,11 +37,23 @@
   .textAreaLight {
     @include text-area-style;
     color: $gray-2;
+
+    &:focus {
+       border: solid 1px $gray;
+    }
   }
 
   .textAreaDark {
     @include text-area-style;
     color: $white;
+
+    &:focus {
+      border: solid 1px $white-2;
+    }
+  }
+
+  .errorBorder {
+    border: solid 1px $error !important;
   }
 
   .helperText {
